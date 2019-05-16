@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/denuncia', function () {
+    return view('formulario_denuncia');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
