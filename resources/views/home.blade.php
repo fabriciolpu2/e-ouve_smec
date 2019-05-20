@@ -11,7 +11,7 @@
                     <table id="demo-foo-addrow" class="table m-t-30 table-hover contact-list" data-page-size="10">
                         <thead>
                             <tr>
-                                <th>No</th>
+                                <th>id</th>
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Phone</th>
