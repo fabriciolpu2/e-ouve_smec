@@ -32,7 +32,7 @@
                 <div class="m-b-0 text-white"><i class="fa fas fa-bullhorn fa-5x"></i></div>
             </div>
             <div class="card-body">
-                <a href="/denuncia" class="btn btn-warning">Denuncia</a>
+                <a href="/manifestacao/denuncia" class="btn btn-warning">Denuncia</a>
             </div>
         </div>
     </div>
@@ -42,7 +42,7 @@
                 <div class="m-b-0 text-white"><i class="fa fa-thumbs-o-down fa-5x"></i></div>
             </div>
             <div class="card-body">
-                <a href="#" class="btn btn-primary">Reclamação</a>
+                <a href="/manifestacao/reclamacao" class="btn btn-primary">Reclamação</a>
             </div>
         </div>
     </div>
@@ -53,7 +53,7 @@
                 <div class="m-b-0 text-white"><i class="fa fa-comment-o fa-5x"></i></div>
             </div>
             <div class="card-body">
-                <a href="#" class="btn btn-warning">Sugestão</a>
+                <a href="/manifestacao/sugestao" class="btn btn-warning">Sugestão</a>
             </div>
         </div>
     </div>
@@ -63,7 +63,7 @@
                 <div class="m-b-0 text-white"><i class="fa fa-thumbs-o-up fa-5x"></i></div>
             </div>
             <div class="card-body">
-                <a href="#" class="btn btn-warning">Elogio</a>
+                <a href="/manifestacao/elogio" class="btn btn-warning">Elogio</a>
             </div>
         </div>
     </div>

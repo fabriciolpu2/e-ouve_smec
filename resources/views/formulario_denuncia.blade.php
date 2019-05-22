@@ -4,79 +4,70 @@
 <div class="card">
     <div class="row">
         <div class="col-lg-12">
-            <div class="card card-outline-danger">
-                <div class="card-header">
-                    <h4 class="m-b-0 text-white">Denúncia</h4>
+        <div class="card card-outline-{{$manifestacao['style']}}">
+                <div class="card-header">                
+ 
+                <h4 class="m-b-0 text-white">{{$manifestacao['tipo']}}</h4>
                 </div>
                 <div class="card-body">
-                    <form action="#">
-                        <div class="form-body">
-                            <h3 class="card-title">Dados da Denúncia</h3>
-                            <hr>
+                    <form action="/manifestacao/nova" method="POST" enctype="multipart/form-data">
+                        <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
+                        <input type="hidden" name="tipo_id" value="{{$manifestacao['tipo_id']}}" />
+                        <div class="form-body">                           
                             <div class="row p-t-20">
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="control-label">Nome</label>
-                                        <input type="text" id="firstName" class="form-control" placeholder="Nome completo">
-                                        <small class="form-control-feedback">Nome é opcional</small> </div>
-                                </div>                                
-                            </div>
-                            <!--/row-->
-                            <!--/span-->
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label class="control-label">Orgão</label>
-                                    <div class="m-b-6">
-                                        <label class="custom-control custom-radio">
-                                            <input id="radio5" name="radio" type="radio" class="custom-control-input">
-                                            <span class="custom-control-label">Escola Municipal</span>
-                                        </label>
-                                        <label class="custom-control custom-radio">
-                                            <input id="radio6" name="radio" type="radio" class="custom-control-input">
-                                            <span class="custom-control-label">Casas Mãe</span>
-                                        </label>
-                                        <label class="custom-control custom-radio">
-                                            <input id="radio6" name="radio" type="radio" class="custom-control-input">
-                                            <span class="custom-control-label">SMEC</span>
-                                        </label>
+                                        @input(['type' => 'text', 'name'=>'nome_autor', 'place'=>'Nome Completo'])
+                                        <small class="form-control-feedback">Nome é opcional</small>
                                     </div>
                                 </div>
                             </div>
-                            <!--/span-->
-                            <div class="row">                                
+                            <div class="col-md-6">
                                 <div class="col-md-6">
                                     <div class="form-group has-success">
-                                        <label class="control-label">Nome da Escola </label>
-                                        <select class="form-control custom-select">
-                                            <option value="">E.M Nome da Escola 01</option>
-                                            <option value="">E.M Nome da Escola 02</option>
-                                            <option value="">E.M Nome da Escola 03</option>                                            
+                                        <label class="control-label">Instituição</label>
+                                        <select class="form-control custom-select" id="tipo-instituicao" name="tipo_id">
+                                            <option value="">Selecione uma opção</option>
+                                            @foreach ($tiposInstituicao as $tipo)                                                
+                                                <option value="{{$tipo->id}}">{{$tipo->descricao}}</option>
+                                            @endforeach                                                                                            
                                         </select>
-                                        <small class="form-control-feedback"> Selecione</small> </div>
                                 </div>
-                                <!--/span-->
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group has-success">
+                                    <label class="control-label">Nome da Escola </label>
+                                    <select class="form-control custom-select" id="instituicao" name="instituicao_id">
+
+                                    </select>
+                                </div>
+                            </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="control-label">Data do Evento</label>
-                                        <input type="date" class="form-control" placeholder="dd/mm/yyyy">
+                                        <input type="date" name="data_evento" class="form-control" placeholder="dd/mm/yyyy">
                                     </div>
                                 </div>
-                                <!--/span-->
                             </div>
-                            <!--/row-->
-                            <div class="row">
+                            <div class="row p-t-20">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label class="control-label">Denúncia</label>
-                                        <textarea class="form-control" rows="5"></textarea>
-                                    </div>
+                                        <label class="control-label">Assunto</label>
+                                        @input(['type' => 'text', 'name'=>'titulo', 'place'=>''])
                                 </div>
-                                
                             </div>
-                            
+                            <!--/row-->
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="control-label">{{$manifestacao['tipo']}}</label>
+                                    <textarea class="form-control" name="relato" rows="5"></textarea>
+                                </div>
+                            </div>
                         </div>
                         <div class="form-actions">
-                            <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i> Save</button>
+                            <button type="submit" class="btn_pesquisar btn btn-success"> <i class="fa fa-check"></i> Save</button>
                             <button type="button" class="btn btn-inverse">Cancel</button>
                         </div>
                     </form>
@@ -86,4 +77,47 @@
     </div>
     <!-- Row -->        
 </div>
+<script>
+
+    var atualizaDados = function () {
+        // $.ajax({
+        //     type: 'get',
+        //     url: '/instituicoes/1',
+        //     dataType: "json",            
+        //     success: function(data) {
+        //         $.each(data.instituicoes, function(i, instituicao) {
+        //             console.log(instituicao.nome)
+        //             $('#instituicao').append("<option class='options_instituicoes' value='"+instituicao.id+"'>"+instituicao.nome+"</option>");
+        //         });
+        //     }
+        // });
+    }
+    //$(atualizaDados);
+
+    $('#tipo-instituicao').change(function (event) { 
+        limpar();       
+        event.preventDefault();  
+        console.log($(this))      
+        $.ajax({
+            type: 'get',
+            url: '/instituicoes/'+ $(this).val(),
+            dataType: "json",
+            success: function(data) {                
+                //console.log(data)
+                $.each(data.instituicoes, function(i, instituicao) {
+                    console.log(instituicao.nome)
+                $('#instituicao').append(
+                    "<option class='options_instituicoes' value='"+instituicao.id+"'>"+instituicao.nome+"</option>"
+                );
+                });                
+            }
+        });
+    });
+    function limpar(){
+        
+        console.log("limpando")
+        $('.options_instituicoes').remove()        
+    }
+
+</script>
 @endsection

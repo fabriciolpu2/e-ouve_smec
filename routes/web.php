@@ -18,6 +18,9 @@ Route::get('/denuncia', function () {
     return view('formulario_denuncia');
 });
 
+Route::get('/manifestacao/{type}', 'AdminController@manifestacao')->name('manifestacao');
+Route::get('/instituicoes/{id}', 'AdminController@listaInstituicoes')->name('instituicoes');
+Route::post('manifestacao/nova', 'AdminController@manifestacaoNova')->name('manifestacaoNova');
 Auth::routes();
 
 Route::get('/home', 'AdminController@listaChamados')->name('home');

@@ -10,7 +10,9 @@ class Chamado extends Model
     protected $fillable = [
         'titulo',
         'relato',
-        'nome_autor',        
+        'nome_autor',
+        'tipo_id',
+        'instituicao_id'
     ];
     public $with = ['midias', 'movimentacao', 'instituicao', 'tipo'];
 

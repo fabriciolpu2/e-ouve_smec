@@ -15,9 +15,10 @@
     <link href="../material/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     
     <!-- Custom CSS -->
-    <link href="horizontal/css/style.css" rel="stylesheet">
+    <link href="/horizontal/css/style.css" rel="stylesheet">
     <!-- You can change the theme colors from here -->
-    <link href="horizontal/css/colors/blue.css" id="theme" rel="stylesheet">
+    <link href="/horizontal/css/colors/blue.css" id="theme" rel="stylesheet">
+    <script src="../material/assets/plugins/jquery/jquery.min.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -112,7 +113,7 @@
                 <!-- ============================================================== -->
                 <div class="row">
                     <div class="col-12">                        
-                            @yield('content')                        
+                            @yield('content')               
                     </div>
                 </div>
                 <!-- ============================================================== -->
@@ -140,21 +141,21 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    <script src="../material/assets/plugins/jquery/jquery.min.js"></script>
+    
     <!-- Bootstrap tether Core JavaScript -->
     <script src="../material/assets/plugins/popper/popper.min.js"></script>
     <script src="../material/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
     <!-- slimscrollbar scrollbar JavaScript -->
-    <script src="horizontal/js/jquery.slimscroll.js"></script>
+    <script src="/horizontal/js/jquery.slimscroll.js"></script>
     <!--Wave Effects -->
-    <script src="horizontal/js/waves.js"></script>
+    <script src="/horizontal/js/waves.js"></script>
     <!--Menu sidebar -->
-    <script src="horizontal/js/sidebarmenu.js"></script>
+    <script src="/horizontal/js/sidebarmenu.js"></script>
     <!--stickey kit -->
     <script src="../material/assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
     <script src="../material/assets/plugins/sparkline/jquery.sparkline.min.js"></script>
     <!--Custom JavaScript -->
-    <script src="horizontal/js/custom.min.js"></script>
+    <script src="/horizontal/js/custom.min.js"></script>
     <!-- ============================================================== -->
     <!-- Style switcher -->
     <!-- ============================================================== -->
