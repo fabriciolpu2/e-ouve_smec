@@ -35,43 +35,22 @@ class CategoriasSeed extends Seeder
            
         
         DB::table('ouvidoria.tipos_chamado')->insert([
-            'descricao' => 'Denuncia'
+            'descricao' => 'Denúncia',
+            'style' => 'danger'
         ]);
 
         DB::table('ouvidoria.tipos_chamado')->insert([
-            'descricao' => 'Elogio'
+            'descricao' => 'Reclamação',
+            'style' => 'warning'
         ]);
         DB::table('ouvidoria.tipos_chamado')->insert([
-            'descricao' => 'Comentario'
+            'descricao' => 'Sugestão',
+            'style' => 'info'
+        ]);        
+        DB::table('ouvidoria.tipos_chamado')->insert([
+            'descricao' => 'Elogio',
+            'style' => 'primary'
         ]);
-
-        DB::table('ouvidoria.chamados')->insert([
-            'titulo' => 'Denuncia 01',
-            'relato' => 'Texto da denuncia',
-            'nome_autor' => 'denuncia anomima',
-            'tipo_id' => 1,
-            'instituicao_id' => 1
-        ]);
-
-        DB::table('ouvidoria.chamados')->insert([
-            'titulo' => 'Denuncia 02',
-            'relato' => 'Texto da denuncia 2',
-            'nome_autor' => 'alexandre',
-            'tipo_id' => 2,
-            'instituicao_id' => 2
-        ]);
-
-        DB::table('ouvidoria.movimentacao_chamados')->insert([
-            'status' => 'Aberto',
-            'user' => 'Funcionario 01',
-            'atividade' => 'encaminhar para setor A',
-            'chamado_id' => 1
-        ]);
-        DB::table('ouvidoria.movimentacao_chamados')->insert([
-            'status' => 'Encerrado',
-            'user' => 'Funcionario 02',
-            'atividade' => 'Solucionado',
-            'chamado_id' => 2
-        ]);
+        
     }
 }

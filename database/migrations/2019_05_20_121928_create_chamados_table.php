@@ -17,8 +17,9 @@ class CreateChamadosTable extends Migration
             $table->bigIncrements('id');
             $table->string('titulo');
             $table->text('relato');
-            $table->string('nome_autor');
-            
+            $table->string('nome_autor')->default("Anonimo");
+            $table->string('token')->unique();
+            $table->date('data_relato')->nullable();
             $table->unsignedInteger('tipo_id');
             $table->unsignedInteger('instituicao_id');
             

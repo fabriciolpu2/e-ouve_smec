@@ -17,7 +17,8 @@ class CreateTipoChamadosTable extends Migration
         Schema::create('ouvidoria.tipos_chamado', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->string('descricao');            
+            $table->string('descricao');
+            $table->string('style');
         });
     }
 

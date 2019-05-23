@@ -27,7 +27,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group has-success">
                                         <label class="control-label">Instituição</label>
-                                        <select class="form-control custom-select" id="tipo-instituicao" name="tipo_id">
+                                        <select class="form-control custom-select" id="tipo-instituicao">
                                             <option value="">Selecione uma opção</option>
                                             @foreach ($tiposInstituicao as $tipo)                                                
                                                 <option value="{{$tipo->id}}">{{$tipo->descricao}}</option>
@@ -47,7 +47,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="control-label">Data do Evento</label>
-                                        <input type="date" name="data_evento" class="form-control" placeholder="dd/mm/yyyy">
+                                        <input type="date" name="data_relato" class="form-control" placeholder="dd/mm/yyyy">
                                     </div>
                                 </div>
                             </div>

@@ -9,7 +9,8 @@ class TipoChamado extends Model
     protected $table = 'ouvidoria.tipos_chamado';
     protected $fillable = 
     [
-        'descricao'
+        'descricao',
+        'style'
     ];
     public function chamados(){
         return $this->hasMany(Chamados::class);

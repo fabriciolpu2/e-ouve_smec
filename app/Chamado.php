@@ -12,7 +12,9 @@ class Chamado extends Model
         'relato',
         'nome_autor',
         'tipo_id',
-        'instituicao_id'
+        'instituicao_id',
+        'token',
+        'data_relato'
     ];
     public $with = ['midias', 'movimentacao', 'instituicao', 'tipo'];
 

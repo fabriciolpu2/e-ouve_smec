@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Chamado;
 use App\Instituicao;
 use App\TipoInstituicao;
+use App\TipoChamado;
 
 use Request;
 
@@ -11,9 +12,13 @@ class AdminController extends Controller
 {
     public function listaChamados()
     {
-        $chamados = Chamado::latest()->paginate();
-        dd($chamados);
-        return view('home', compact('chamados'));
+        $chamados = Chamado::paginate();
+
+        $tiposInstituicao = TipoInstituicao::all();
+        $tipoChamado = TipoChamado::all();
+
+        //dd($chamados);
+        return view('home', compact('chamados', 'tiposInstituicao', 'tipoChamado'));
     }
 
     public function manifestacao($type) {
@@ -41,6 +46,7 @@ class AdminController extends Controller
         } else if ($type == 'elogio') {
             $manifestacao['tipo'] = 'Elogio';
             $manifestacao['style'] = 'primary';
+            $manifestacao['tipo_id'] = 4;
             return view('formulario_denuncia', compact('tiposInstituicao', 'instituicoes', 'manifestacao'));
         }
         
@@ -48,11 +54,18 @@ class AdminController extends Controller
     }
     public function manifestacaoNova() {
         $valores = Request::all();
-        
+        //dd($valores);
+        $token = str_random(12);
+        $valores['token'] = $token;
+        if(empty($valores['nome_autor'])) {
+            $valores['nome_autor'] = 'Anônimo';
+        }
         $chamado = Chamado::create($valores);
-        dd($chamado);
+        
+        return view('confirmacao_manifestacao', compact('chamado'));
 
     }
+    
     public function listaInstituicoes($type){
         $instituicoes = Instituicao::where('tipo_id', $type)->get();
         //dd($instituicoes);   
