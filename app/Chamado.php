@@ -14,12 +14,20 @@ class Chamado extends Model
         'tipo_id',
         'instituicao_id',
         'token',
-        'data_relato'
+        'data_relato',
+        'status_id',
+        'assunto_id'
     ];
-    public $with = ['midias', 'movimentacao', 'instituicao', 'tipo'];
+    public $with = ['midias', 'movimentacao', 'instituicao', 'tipo', 'assunto','status'];
 
     public function midias(){
         return $this->hasMany(MidiaChamado::class);
+    }
+    public function assunto(){
+        return $this->belongsTo(Assunto::class);
+    }
+    public function status(){
+        return $this->belongsTo(Status::class);
     }
     public function movimentacao(){
         return $this->hasMany(MovimentacaoChamado::class);

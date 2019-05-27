@@ -11,9 +11,11 @@ class MovimentacaoChamado extends Model
     [
         'status',
         'user',
-        'atividade'
+        'atividade',
+        'chamado_id'
     ];
     public function chamado(){
         return $this->belongsTo(Chamado::class);
     }
+    
 }

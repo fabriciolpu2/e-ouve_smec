@@ -17,12 +17,12 @@
                                 <th>Tipo</th>
                                 <th>Insitituição</th>
                                 <th>Token</th>
-                                <th>Titulo</th>
+                                <th>Status</th>
                                 <th>Data</th>                                
                                 <th>Action</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody class="tabela_manifestacoes">
                             @foreach ($chamados as $c)                                                        
                                 <tr>
                                     <td>{{$c->id}}</td>                                    
@@ -30,10 +30,10 @@
                                     <td><span class="label label-{{$c->tipo->style}}">{{$c->tipo->descricao}}</span> </td>
                                     <td>{{$c->instituicao->nome}}</td>
                                     <td>{{$c->token}}</td>
-                                    <td>{{$c->titulo}}</td>
+                                    <td><span class="label label-{{$c->status->style}}">{{$c->status->descricao}}</span> </td>
                                     <td>{{$c->created_at}}</td>
                                     <td>
-                                        <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
+                                        <a class="btn btn-primary" href="/manifestacao/visualizar/{{$c->id}}" role="button"><i class="fa fa-search"></i> Visualizar</a>                                        
                                     </td>
                                 </tr>
                             @endforeach

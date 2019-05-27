@@ -51,6 +51,38 @@ class CategoriasSeed extends Seeder
             'descricao' => 'Elogio',
             'style' => 'primary'
         ]);
+
+        DB::table('ouvidoria.status')->insert([
+            'descricao' => 'Aberto',
+            'style' => 'danger'
+        ]);
+        DB::table('ouvidoria.status')->insert([
+            'descricao' => 'Em Analise',
+            'style' => 'warning'
+        ]);
+        DB::table('ouvidoria.status')->insert([
+            'descricao' => 'Encerrado',
+            'style' => 'info'
+        ]);
+        DB::table('ouvidoria.tipos_assunto')->insert([
+            'descricao' => 'Assistentes de Alunos'
+        ]);
+        DB::table('ouvidoria.tipos_assunto')->insert([
+            'descricao' => 'Cuidadores'
+        ]);
+        DB::table('ouvidoria.tipos_assunto')->insert([
+            'descricao' => 'Coordenação'
+        ]);
+        DB::table('ouvidoria.tipos_assunto')->insert([
+            'descricao' => 'Prédio'
+        ]);
+        DB::table('ouvidoria.tipos_assunto')->insert([
+            'descricao' => 'Professores'
+        ]);DB::table('ouvidoria.tipos_assunto')->insert([
+            'descricao' => 'Gestores/Diretores'
+        ]);DB::table('ouvidoria.tipos_assunto')->insert([
+            'descricao' => 'Merenda/Alimentação'
+        ]);
         
     }
 }

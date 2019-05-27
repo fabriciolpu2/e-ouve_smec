@@ -8,37 +8,57 @@
                 <h4 class="modal-title" id="myModalLabel"></h4></div>
             <div class="modal-body">
                 <from class="form-horizontal form-material">
+                        <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
                     <div class="form-group">
                         <div class="form-group has-success">
-                            <select class="form-control custom-select" id="tipo-instituicao">
-                                <option value="">Selecione um motivo</option>
-                                @foreach ($tiposInstituicao as $tipo)                                                
-                                    <option value="{{$tipo->id}}">{{$tipo->descricao}}</option>
-                                @endforeach                                                                                            
-                            </select>                            
-                        <div class="col-md-12 m-b-20">
-                            <input type="text" class="form-control" placeholder="Nome"> </div>
-                        <div class="col-md-12 m-b-20">
-                            <input type="text" class="form-control" placeholder="Tipo Instituicao"> </div>
-                        <div class="col-md-12 m-b-20">
-                            <input type="text" class="form-control" placeholder="Nome da Instituição "> </div>
-                        <div class="col-md-12 m-b-20">
-                            <input type="text" class="form-control" placeholder="Data"> </div>
-                        <div class="col-md-12 m-b-20">
-                            <input type="text" class="form-control" placeholder="Assunto"> </div>
-                        <div class="col-md-12 m-b-20">
-                            <input type="text" class="form-control" placeholder="Descricao"> </div>
-                        
-                        <div class="col-md-12 m-b-20">
-                            <div class="fileupload btn btn-danger btn-rounded waves-effect waves-light"><span><i class="ion-upload m-r-5"></i>Upload Contact Image</span>
-                                <input type="file" class="upload"> </div>
+                            <div class="col-md-12 m-b-20">
+                                <select class="form-control custom-select" id="tipo-manifestacao" name="_tipo_id" required>
+                                    <option value="">Selecione um motivo</option>
+                                    @foreach ($tipoChamado as $tipo)                                                
+                                        <option value="{{$tipo->id}}">{{$tipo->descricao}}</option>
+                                    @endforeach                                                                                            
+                                </select>
+                            </div>                           
+                            <div class="col-md-12 m-b-20">
+                                <input type="text" class="form-control" placeholder="Nome" name="nome_autor"> </div>
+                            <div class="col-md-12 m-b-20">
+                                <select class="form-control custom-select" id="assunto_id" name="assunto_id" required>
+                                    <option value="">Natureza da Manifestação</option>
+                                    @foreach ($assuntos as $tipo)                                                
+                                        <option value="{{$tipo->id}}">{{$tipo->descricao}}</option>
+                                    @endforeach                                                                                            
+                                </select>
+                            </div>
+                            <div class="col-md-12 m-b-20">
+                                <select class="form-control custom-select" id="tipo-instituicao" name="tipo_instituicao" required>
+                                    <option value="">Tipo da Instituição</option>
+                                    @foreach ($tiposInstituicao as $tipo)                                                
+                                        <option value="{{$tipo->id}}">{{$tipo->descricao}}</option>
+                                    @endforeach                                                                                            
+                                </select>
+                            </div>
+                            <div class="col-md-12 m-b-20">
+                                <select class="form-control custom-select" id="instituicao" name="instituicao_id" required>
+                                                                                                                                
+                                </select>
+                            </div>                        
+                            <div class="col-md-12 m-b-20">
+                                <input type="date" class="form-control" placeholder="Data" id="data_evento" name="data_evento" >
+                            </div>
+                            <div class="col-md-12 m-b-20">
+                                <input type="text" class="form-control" placeholder="Assunto" name="titulo" required>
+                            </div>
+                            <div class="col-md-12 m-b-20">
+                                <textarea class="form-control" name="relato" placeholder="Relato" rows="5" required></textarea>                                
+                            </div>
+                                                        
                         </div>
                     </div>
                 </from>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-info waves-effect" data-dismiss="modal">Save</button>
-                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-info waves-effect save" data-dismiss="modal">Adicionar</button>
+                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Cancelar</button>
             </div>
         </div>
         <!-- /.modal-content -->
@@ -46,6 +66,74 @@
     <!-- /.modal-dialog -->
 </div>
 
-<script> 
+<script>
+     $('#tipo-instituicao').change(function (event) { 
+        limpar();       
+        event.preventDefault();  
+        console.log($(this))      
+        $.ajax({
+            type: 'get',
+            url: '/instituicoes/'+ $(this).val(),
+            dataType: "json",
+            success: function(data) {                
+                //console.log(data)
+                $.each(data.instituicoes, function(i, instituicao) {
+                    console.log(instituicao.nome)
+                $('#instituicao').append(
+                    "<option class='options_instituicoes' value='"+instituicao.id+"'>"+instituicao.nome+"</option>"
+                );
+                });                
+            }
+        });
+    });
+    function limpar(){
+        
+        console.log("limpando")
+        $('.options_instituicoes').remove()        
+    }    
+    $('.modal-footer').on('click', '.save', function() {
+        // console.log("Salvando");
+        // console.log($('input[name=_token]').val())
+        // console.log($('#tipo-manifestacao').val())
+        // console.log($('input[name=nome_autor]').val())
+        // console.log($('#instituicao_id').val())
+        // console.log($('input[name=data_evento]').val())
+        // console.log($('input[name=assunto]').val())
+        // console.log($('input[name=relato]').val())
+        $.ajax ({
+            type: 'post',
+            url: '/manifestacao/create',
+            data: {
+                '_token': $('input[name=_token]').val(),
+                'tipo_id': $('#tipo-manifestacao').val(),
+                'nome_autor': $('input[name=nome_autor]').val(),
+                'instituicao_id': $('#instituicao').val(),
+                'assunto_id': $('#assunto_id').val(),
+                'data_relato': $('input[name=data_evento]').val(),
+                'titulo': $('input[name=titulo]').val(),
+                'relato': $('input[name=relato]').val()              
+            },
+            success: function(data) {
+                if(data.erros) {                    
+                    alert("Erro");
+                } else {    
+                    //console.log(data.chamado.tipo.id)
+                    alert("Token: "+data.chamado.token);                    
+                    $('.tabela_manifestacoes').append(
+                        "<tr class='id"+ data.chamado.id + "'>"+
+                            "<td>"+data.chamado.id+"</td>"+
+                            "<td>"+data.chamado.nome_autor+"</td>"+
+                            "<td> <span class='label label-danger'>"+data.chamado.tipo_id+"</span></td>"+
+                            "<td>"+data.chamado.instituicao_id+"</td>"+
+                            "<td>"+data.chamado.token+"</td>"+
+                            "<td>"+data.chamado.titulo+"</td>"+
+                            "<td>"+data.chamado.created_at+"</td>"+
+                            "<td><button type='button' class='btn btn-sm btn-icon btn-pure btn-outline delete-row-btn' data-toggle='tooltip' data-original-title='Delete'><i class='ti-close' aria-hidden='true'></i></button></td>" +
+                        "</tr>"
+                    )
+                }
+            }
+        })
+    })
 
 </script>

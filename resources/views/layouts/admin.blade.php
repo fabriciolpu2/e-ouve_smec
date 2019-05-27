@@ -12,14 +12,15 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="../material/assets/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/material/assets/images/favicon.png">
     <!-- Bootstrap Core CSS -->
-    <link href="../material/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../material/assets/plugins/footable/css/footable.core.css" rel="stylesheet">
+    <link href="/material/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/material/assets/plugins/footable/css/footable.core.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="/material/css/style.css" rel="stylesheet">
     <!-- You can change the theme colors from here -->
     <link href="/material/css/colors/blue.css" id="theme" rel="stylesheet">
+    <script src="/material/assets/plugins/jquery/jquery.min.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -54,17 +55,17 @@
                             <b>
                                 <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                                 <!-- Dark Logo icon -->
-                                <img src="../material/assets/images/logo.png" alt="homepage" class="dark-logo" />
+                                <img src="/material/assets/images/logo.png" alt="homepage" class="dark-logo" />
                                 <!-- Light Logo icon -->
-                                <img src="../material/assets/images/logo.png" alt="homepage" class="light-logo" />
+                                <img src="/material/assets/images/logo.png" alt="homepage" class="light-logo" />
                             </b>
                             <!--End Logo icon -->
                             <!-- Logo text -->
                             <span>
                              <!-- dark Logo text -->
-                             <img src="../material/assets/images/logo-text.png" alt="homepage" class="dark-logo" />
+                             <img src="/material/assets/images/logo-text.png" alt="homepage" class="dark-logo" />
                              <!-- Light Logo text -->    
-                             <img src="../material/assets/images/logo-light-text.png" class="light-logo" alt="homepage" /></span> </a>
+                             <img src="/material/assets/images/logo-light-text.png" class="light-logo" alt="homepage" /></span> </a>
                     </div>
                     <!-- ============================================================== -->
                     <!-- End Logo -->
@@ -140,13 +141,18 @@
                                             <div class="message-center">
                                                 <!-- Message -->
                                                 <a href="#">
-                                                    <div class="user-img"> <img src="../material/assets/images/users/1.jpg" alt="user" class="img-circle"> <span class="profile-status online pull-right"></span> </div>
+                                                    <div class="user-img"> <img src="/material/assets/images/users/1.jpg" alt="user" class="img-circle"> <span class="profile-status online pull-right"></span> </div>
                                                     <div class="mail-contnet">
                                                         <h5>Pavan kumar</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:30 AM</span> </div>
                                                 </a>                                                
                                             </div>
                                         </li>
                                         <li>
+
+
+
+
+
                                             <a class="nav-link text-center" href="javascript:void(0);"> <strong>See all e-Mails</strong> <i class="fa fa-angle-right"></i> </a>
                                         </li>
                                     </ul>
@@ -159,12 +165,12 @@
                             <!-- Profile -->
                             <!-- ============================================================== -->
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../material/assets/images/users/1.jpg" alt="user" class="profile-pic" /></a>
+                                <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="/material/assets/images/users/1.jpg" alt="user" class="profile-pic" /></a>
                                 <div class="dropdown-menu dropdown-menu-right scale-up">
                                     <ul class="dropdown-user">
                                         <li>
                                             <div class="dw-user-box">
-                                                <div class="u-img"><img src="../material/assets/images/users/1.jpg" alt="user"></div>
+                                                <div class="u-img"><img src="/material/assets/images/users/1.jpg" alt="user"></div>
                                                 <div class="u-text">
                                                     <h4>Steave Jobs</h4>
                                                     <p class="text-muted">varun@gmail.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>
@@ -202,9 +208,9 @@
                 <!-- Sidebar scroll-->
                 <div class="scroll-sidebar">
                     <!-- User profile -->
-                    <div class="user-profile" style="background: url(../material/assets/images/background/user-info.jpg) no-repeat;">
+                    <div class="user-profile" style="background: url(/material/assets/images/background/user-info.jpg) no-repeat;">
                         <!-- User profile image -->
-                        <div class="profile-img"> <img src="../material/assets/images/users/profile.png" alt="user" /> </div>
+                        <div class="profile-img"> <img src="/material/assets/images/users/profile.png" alt="user" /> </div>
                         <!-- User profile text-->
                         <div class="profile-text"> <a href="#" class="" data-toggle="" role="" aria-haspopup="true" aria-expanded="true">Markarn Doe</a>
                         </div>
@@ -299,10 +305,10 @@
         <!-- ============================================================== -->
         <!-- All Jquery -->
         <!-- ============================================================== -->
-        <script src="../material/assets/plugins/jquery/jquery.min.js"></script>
+        
         <!-- Bootstrap tether Core JavaScript -->
-        <script src="../material/assets/plugins/popper/popper.min.js"></script>
-        <script src="../material/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+        <script src="/material/assets/plugins/popper/popper.min.js"></script>
+        <script src="/material/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
         <!-- slimscrollbar scrollbar JavaScript -->
         <script src="/material/js/jquery.slimscroll.js"></script>
         <!--Wave Effects -->
@@ -310,16 +316,16 @@
         <!--Menu sidebar -->
         <script src="/material/js/sidebarmenu.js"></script>
         <!--stickey kit -->
-        <script src="../material/assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
-        <script src="../material/assets/plugins/sparkline/jquery.sparkline.min.js"></script>
+        <script src="/material/assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
+        <script src="/material/assets/plugins/sparkline/jquery.sparkline.min.js"></script>
         <!--Custom JavaScript -->
         <script src="/material/js/custom.min.js"></script>
         <!-- ============================================================== -->
         <!-- Style switcher -->
         <!-- ============================================================== -->
-        <script src="../material/assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
-        <script src="../material/assets/plugins/footable/js/footable.all.min.js"></script>
-        <script src="../material/assets/plugins/bootstrap-select/bootstrap-select.min.js" type="text/javascript"></script>
+        <script src="/material/assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
+        <script src="/material/assets/plugins/footable/js/footable.all.min.js"></script>
+        <script src="/material/assets/plugins/bootstrap-select/bootstrap-select.min.js" type="text/javascript"></script>
         
         <!--FooTable init-->
         <script src="/material/js/footable-init.js"></script>

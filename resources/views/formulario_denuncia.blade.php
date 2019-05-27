@@ -24,10 +24,22 @@
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <div class="col-md-6">
-                                    <div class="form-group has-success">
+
+                                <div class="form-group has-success">
+                                        <label class="control-label">Natureza da Manifestação</label>
+                                        <select class="form-control custom-select" required id="assunto-manifestacao" name="assunto_id">
+                                            <option value="">Selecione uma opção</option>
+                                            @foreach ($assuntos as $tipo)                                                
+                                                <option value="{{$tipo->id}}">{{$tipo->descricao}}</option>
+                                            @endforeach                                                                                            
+                                        </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+
+                                <div class="form-group has-success">
                                         <label class="control-label">Instituição</label>
-                                        <select class="form-control custom-select" id="tipo-instituicao">
+                                        <select class="form-control custom-select" required id="tipo-instituicao">
                                             <option value="">Selecione uma opção</option>
                                             @foreach ($tiposInstituicao as $tipo)                                                
                                                 <option value="{{$tipo->id}}">{{$tipo->descricao}}</option>
@@ -55,14 +67,14 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="control-label">Assunto</label>
-                                        @input(['type' => 'text', 'name'=>'titulo', 'place'=>''])
+                                        <input type="text" class="form-control" placeholder="Assunto" name="titulo" required>
                                 </div>
                             </div>
                             <!--/row-->
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label class="control-label">{{$manifestacao['tipo']}}</label>
-                                    <textarea class="form-control" name="relato" rows="5"></textarea>
+                                    <textarea class="form-control" name="relato" rows="5" required></textarea>
                                 </div>
                             </div>
                         </div>
