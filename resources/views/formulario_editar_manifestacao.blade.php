@@ -34,41 +34,50 @@
     </div>
     <!-- Row -->
 </div>
-<div class="card">
+@if($chamado->status->descricao == 'Encerrado')
     <div class="row">
-        <div class="col-lg-12">
-            <div class="card-outline-{{$chamado->status->style}}">
-                <div class="card-header"><h4 class="m-b-0 text-white">Movimentações</h4></div>
-                <form action="/manifestacao/editar/{{$chamado->id}}" method="POST" enctype="multipart/form-data">
-                    <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />                        
-                    <div class="form-body">
-                        <br>
-                        <div class="col-md-12">
-                            <label class="control-label">Resposta</label>
-                            <div class="form-group">
-                                <textarea class="form-control" name="atividade" rows="5" required></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label">Status</label>
-                                <select class="form-control custom-select" required id="status_manifestacao" name="status_id">
-                                    <option value="">Selecione uma opção</option>
-                                    @foreach ($status as $tipo)
-                                        <option value="{{$tipo->id}}">{{$tipo->descricao}}</option>
-                                    @endforeach
-                                </select>
+        <div class="col-md-12" style="text-align: center">
+            <a class="btn btn-primary" href="/home" role="button"><i class="fa fa-home"></i> Inicio</a>
+        </div>
+    </div>
+@else
+    <div class="card">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card-outline-{{$chamado->status->style}}">
+                    <div class="card-header"><h4 class="m-b-0 text-white">Movimentações</h4></div>
+                    <form action="/manifestacao/editar/{{$chamado->id}}" method="POST" enctype="multipart/form-data">
+                        <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />                        
+                        <div class="form-body">
+                            <br>
+                            <div class="col-md-12">
+                                <label class="control-label">Resposta</label>
+                                <div class="form-group">
+                                    <textarea class="form-control" name="atividade" rows="5" required></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Status</label>
+                                    <select class="form-control custom-select" required id="status_manifestacao" name="status_id">
+                                        <option value="">Selecione uma opção</option>
+                                        @foreach ($status as $tipo)
+                                            <option value="{{$tipo->id}}">{{$tipo->descricao}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                
                             </div>
                             
+                            <div class="form-actions" style="margin-left: 30px">
+                                <button type="submit" class="btn_pesquisar btn btn-success"> <i class="fa fa-check"></i> Editar</button>
+                                <button type="button" class="btn btn-inverse">Voltar</button>
+                            </div>
+                            <br>
                         </div>
-                        
-                        <div class="form-actions" style="margin-left: 30px">
-                            <button type="submit" class="btn_pesquisar btn btn-success"> <i class="fa fa-check"></i> Editar</button>
-                            <button type="button" class="btn btn-inverse">Voltar</button>
-                        </div>
-                        <br>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
+@endif
+
 @endsection

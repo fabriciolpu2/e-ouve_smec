@@ -26,45 +26,53 @@
         <h4 class="m-b-0">Card styles</h4>
         <p class="text-muted m-t-0 font-12"></p>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-3">        
         <div class="card card-inverse card-danger" style="text-align: center">
-            <div class="card-header">
-                <div class="m-b-0 text-white"><i class="fa fas fa-bullhorn fa-5x"></i></div>
-            </div>
-            <div class="card-body">
-                <a href="/manifestacao/denuncia" class="btn btn-warning">Denuncia</a>
-            </div>
+            <a href="/manifestacao/denuncia">
+                <div class="card-header">
+                    <div class="m-b-0 text-white"><i class="fa fas fa-bullhorn fa-5x"></i></div>
+                </div>
+                <div class="card-body">
+                    <h2 style="color: azure">Denúncia</h2>
+                </div>
+            </a>
         </div>
     </div>
     <div class="col-md-3">
         <div class="card card-inverse card-warning" style="text-align: center">
-            <div class="card-header">
-                <div class="m-b-0 text-white"><i class="fa fa-thumbs-o-down fa-5x"></i></div>
-            </div>
-            <div class="card-body">
-                <a href="/manifestacao/reclamacao" class="btn btn-primary">Reclamação</a>
-            </div>
+            <a href="/manifestacao/reclamacao">
+                <div class="card-header">
+                    <div class="m-b-0 text-white"><i class="fa fa-thumbs-o-down fa-5x"></i></div>
+                </div>
+                <div class="card-body">
+                    <h2 style="color: azure">Reclamação</h2>
+                </div>
+            </a>
         </div>
     </div>
 
     <div class="col-md-3">
         <div class="card card-inverse card-info" style="text-align: center">
-            <div class="card-header">
-                <div class="m-b-0 text-white"><i class="fa fa-comment-o fa-5x"></i></div>
-            </div>
-            <div class="card-body">
-                <a href="/manifestacao/sugestao" class="btn btn-warning">Sugestão</a>
-            </div>
+            <a href="/manifestacao/sugestao">
+                <div class="card-header">
+                    <div class="m-b-0 text-white"><i class="fa fa-comment-o fa-5x"></i></div>
+                </div>
+                <div class="card-body">
+                    <h2 style="color: azure">Sugestão</h2>
+                </div>
+            </a>
         </div>
     </div>
     <div class="col-md-3">
         <div class="card card-inverse card-primary" style="text-align: center">
-            <div class="card-header">
-                <div class="m-b-0 text-white"><i class="fa fa-thumbs-o-up fa-5x"></i></div>
-            </div>
-            <div class="card-body">
-                <a href="/manifestacao/elogio" class="btn btn-warning">Elogio</a>
-            </div>
+            <a href="/manifestacao/elogio">
+                <div class="card-header">
+                    <div class="m-b-0 text-white"><i class="fa fa-thumbs-o-up fa-5x"></i></div>
+                </div>
+                <div class="card-body">
+                    <h2 style="color: azure">Elogio</h2>
+                </div>
+            </a>
         </div>
     </div>
     

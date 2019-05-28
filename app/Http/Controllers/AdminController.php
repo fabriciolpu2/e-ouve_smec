@@ -13,6 +13,10 @@ use Request;
 
 class AdminController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function listaChamados()
     {
         $chamados = Chamado::paginate();
@@ -25,6 +29,41 @@ class AdminController extends Controller
         //dd($chamados);
         return view('home', compact('chamados', 'tiposInstituicao', 'tipoChamado', 'assuntos', 'instituicoes'));
     }
+    
+    public function listaChamadosType($id)
+    {
+        $chamados = Chamado::where('tipo_id', $id)->paginate();
+
+        $tiposInstituicao = TipoInstituicao::all();
+        $instituicoes = Instituicao::where('tipo_id', 1)->get();
+        $tipoChamado = TipoChamado::all();
+        $assuntos = Assunto::all();
+
+        //dd($chamados);
+        return view('home', compact('chamados', 'tiposInstituicao', 'tipoChamado', 'assuntos', 'instituicoes'));
+    }
+
+    public function listaChamadosStatus($id)
+    {
+        $chamados = Chamado::where('status_id', $id)->paginate();
+
+        $tiposInstituicao = TipoInstituicao::all();
+        $instituicoes = Instituicao::where('tipo_id', 1)->get();
+        $tipoChamado = TipoChamado::all();
+        $assuntos = Assunto::all();
+
+        //dd($chamados);
+        return view('home', compact('chamados', 'tiposInstituicao', 'tipoChamado', 'assuntos', 'instituicoes'));
+    }
+
+    public function buscaProtocolo(){
+        $protocolo = Request::all();        
+        $chamado = Chamado::where('token', $protocolo['protocolo'])->first();        
+        $status = Status::all();
+        return view('busca_manifestacao', compact('chamado', 'status'));
+    }
+    
+    
 
     public function manifestacao($type) {
         
@@ -67,6 +106,7 @@ class AdminController extends Controller
         if(empty($valores['nome_autor'])) {
             $valores['nome_autor'] = 'Anônimo';
         }
+        //dd($valores);
         $chamado = Chamado::create($valores);
         //dd($chamado->tipo);
         return response()->json(array('chamado' => $chamado));

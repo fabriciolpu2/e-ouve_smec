@@ -92,14 +92,15 @@
         $('.options_instituicoes').remove()        
     }    
     $('.modal-footer').on('click', '.save', function() {
-        // console.log("Salvando");
-        // console.log($('input[name=_token]').val())
-        // console.log($('#tipo-manifestacao').val())
-        // console.log($('input[name=nome_autor]').val())
-        // console.log($('#instituicao_id').val())
-        // console.log($('input[name=data_evento]').val())
-        // console.log($('input[name=assunto]').val())
-        // console.log($('input[name=relato]').val())
+        console.log("Salvando");
+        console.log($('input[name=_token]').val())
+        console.log($('#tipo-manifestacao').val())
+        console.log($('input[name=nome_autor]').val())
+        console.log($('#instituicao').val())
+        console.log($('input[name=data_evento]').val())
+        console.log($('#assunto_id').val())
+        console.log($('input[name=titulo]').val())
+        console.log($('input[name=relato]').val())
         $.ajax ({
             type: 'post',
             url: '/manifestacao/create',
@@ -125,10 +126,11 @@
                             "<td>"+data.chamado.nome_autor+"</td>"+
                             "<td> <span class='label label-danger'>"+data.chamado.tipo_id+"</span></td>"+
                             "<td>"+data.chamado.instituicao_id+"</td>"+
-                            "<td>"+data.chamado.token+"</td>"+
-                            "<td>"+data.chamado.titulo+"</td>"+
+                            "<td>"+data.chamado.token+"</td>"+                        
+                            "<td> <span class='label label-danger'>Aberto</span></td>"+
                             "<td>"+data.chamado.created_at+"</td>"+
-                            "<td><button type='button' class='btn btn-sm btn-icon btn-pure btn-outline delete-row-btn' data-toggle='tooltip' data-original-title='Delete'><i class='ti-close' aria-hidden='true'></i></button></td>" +
+                            
+                            "<td><a class='btn btn-primary' href='/manifestacao/visualizar/"+data.chamado.id+"' role='button'><i class='fa fa-search'></i> Visualizar</a></td>" +
                         "</tr>"
                     )
                 }

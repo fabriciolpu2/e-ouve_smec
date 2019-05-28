@@ -101,99 +101,32 @@
                                 <a class="nav-link dropdown-toggle text-muted text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="mdi mdi-message"></i>
                                     <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
                                 </a>
-                                <div class="dropdown-menu dropdown-menu-right mailbox scale-up">
-                                    <ul>
-                                        <li>
-                                            <div class="drop-title">Notifications</div>
-                                        </li>
-                                        <li>
-                                            <div class="message-center">
-                                                <!-- Message -->
-                                                <a href="#">
-                                                    <div class="btn btn-danger btn-circle"><i class="fa fa-link"></i></div>
-                                                    <div class="mail-contnet">
-                                                        <h5>Luanch Admin</h5> <span class="mail-desc">Just see the my new admin!</span> <span class="time">9:30 AM</span> </div>
-                                                </a>                                                
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <a class="nav-link text-center" href="javascript:void(0);"> <strong>Check all notifications</strong> <i class="fa fa-angle-right"></i> </a>
-                                        </li>
-                                    </ul>
+                                <div class="dropdown-menu dropdown-menu-right mailbox scale-up">                                    
                                 </div>
                             </li>
-                            <!-- ============================================================== -->
-                            <!-- End Comment -->
-                            <!-- ============================================================== -->
-                            <!-- ============================================================== -->
-                            <!-- Messages -->
-                            <!-- ============================================================== -->
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" id="2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="mdi mdi-email"></i>
-                                    <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
-                                </a>
-                                <div class="dropdown-menu mailbox dropdown-menu-right scale-up" aria-labelledby="2">
-                                    <ul>
-                                        <li>
-                                            <div class="drop-title">You have 4 new messages</div>
-                                        </li>
-                                        <li>
-                                            <div class="message-center">
-                                                <!-- Message -->
-                                                <a href="#">
-                                                    <div class="user-img"> <img src="/material/assets/images/users/1.jpg" alt="user" class="img-circle"> <span class="profile-status online pull-right"></span> </div>
-                                                    <div class="mail-contnet">
-                                                        <h5>Pavan kumar</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:30 AM</span> </div>
-                                                </a>                                                
-                                            </div>
-                                        </li>
-                                        <li>
-
-
-
-
-
-                                            <a class="nav-link text-center" href="javascript:void(0);"> <strong>See all e-Mails</strong> <i class="fa fa-angle-right"></i> </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <!-- ============================================================== -->
-                            <!-- End Messages -->
-                            <!-- ============================================================== -->
-                            <!-- ============================================================== -->
+                            
                             <!-- Profile -->
                             <!-- ============================================================== -->
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="/material/assets/images/users/1.jpg" alt="user" class="profile-pic" /></a>
+                                <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img src="/material/assets/images/users/1.jpg" alt="user" class="profile-pic" />
+                                </a>
                                 <div class="dropdown-menu dropdown-menu-right scale-up">
                                     <ul class="dropdown-user">
                                         <li>
                                             <div class="dw-user-box">
                                                 <div class="u-img"><img src="/material/assets/images/users/1.jpg" alt="user"></div>
                                                 <div class="u-text">
-                                                    <h4>Steave Jobs</h4>
-                                                    <p class="text-muted">varun@gmail.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>
+                                                    <h4>{{ Auth::user()->name }}</h4>
+                                                    {{ Auth::user()->email }}</div>
                                             </div>
                                         </li>
                                         <li role="separator" class="divider"></li>
                                         <li><a href="#"><i class="ti-user"></i> My Profile</a></li>
-                                        <li><a href="#"><i class="ti-wallet"></i> My Balance</a></li>
-                                        <li><a href="#"><i class="ti-email"></i> Inbox</a></li>
-                                        <li role="separator" class="divider"></li>
-                                        <li><a href="#"><i class="ti-settings"></i> Account Setting</a></li>
-                                        <li role="separator" class="divider"></li>
-                                        <li><a href="#"><i class="fa fa-power-off"></i> Logout</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('logout') }}">{{ __('Logout') }}</a></li>
                                     </ul>
                                 </div>
-                            </li>
-                            <!-- ============================================================== -->
-                            <!-- Language -->
-                            <!-- ============================================================== -->
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="flag-icon flag-icon-us"></i></a>
-                                <div class="dropdown-menu dropdown-menu-right scale-up"> <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-in"></i> India</a> <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-fr"></i> French</a> <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-cn"></i> China</a> <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-de"></i> Dutch</a> </div>
-                            </li>
+                            </li>                            
                         </ul>
                     </div>
                 </nav>
@@ -212,38 +145,51 @@
                         <!-- User profile image -->
                         <div class="profile-img"> <img src="/material/assets/images/users/profile.png" alt="user" /> </div>
                         <!-- User profile text-->
-                        <div class="profile-text"> <a href="#" class="" data-toggle="" role="" aria-haspopup="true" aria-expanded="true">Markarn Doe</a>
+                        <div class="profile-text"> <a href="#" class="" data-toggle="" role="" aria-haspopup="true" aria-expanded="true">{{ Auth::user()->name }} <span class="caret"></span></a>
                         </div>
                     </div>
                     <!-- End User profile text-->
                     <!-- Sidebar navigation-->
                     <nav class="sidebar-nav">
                         <ul id="sidebarnav">
-                            <li class="nav-small-cap">PERSONAL</li>                                                                                 
-                            <li class="nav-devider"></li>
+                            {{-- <li class="nav-devider"></li> --}}
                             <li class="nav-small-cap">FORMS, TABLE &amp; WIDGETS</li>
                             <li>
-                                <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-file"></i><span class="hide-menu">Forms</span></a>
+                                <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-file"></i><span class="hide-menu">Manifestações</span></a>
                                 <ul aria-expanded="false" class="collapse">
-                                    <li><a href="form-basic.html">Basic Forms</a></li>                                    
-                                    <li><a href="form-tinymce.html">Tinymce Editor</a></li>
+                                        <li><a href="/home">Exibir Todas</a></li>
+                                    <li><a href="/manifestacoes/type/1">Denuncias</a></li>
+                                    <li><a href="/manifestacoes/type/2">Reclamações</a></li>
+                                    <li><a href="/manifestacoes/type/3">Sugestões</a></li>
+                                    <li><a href="/manifestacoes/type/4">Elogios</a></li>
+                                    <li><a class="has-arrow" href="#" aria-expanded="false"><b>Status</b></a>
+                                        <ul aria-expanded="false" class="collapse">
+                                            <li><a href="/manifestacoes/status/1">Aberto</a></li>
+                                            <li><a href="/manifestacoes/status/2">Em Analise</a></li>
+                                            <li><a href="/manifestacoes/status/3">Encerrados</a></li>
+                                        </ul>
+                                    </li>
+                                    
                                 </ul>
                             </li>                                                                                
+                            <li>
+                                <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-file"></i><span class="hide-menu">Relatórios</span></a>
+                                <ul aria-expanded="false" class="collapse">
+                                    <li><a href="/manifestacoes/denuncias">Denuncias</a></li>                                    
+                                </ul>
+                            </li>                                
+                            <li>
+                                <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-file"></i><span class="hide-menu">Usuários</span></a>
+                                <ul aria-expanded="false" class="collapse">
+                                    <li><a href="/admin/usuarios/cadastrar">Cadastrar Usuário</a></li>
+                                    <li><a href="/admin/usuarios/">Listar usuários</a></li>
+                                </ul>
+                            </li>                                
                         </ul>
                     </nav>
                     <!-- End Sidebar navigation -->
                 </div>
-                <!-- End Sidebar scroll-->
-                <!-- Bottom points-->
-                <div class="sidebar-footer">
-                    <!-- item-->
-                    <a href="" class="link" data-toggle="tooltip" title="Settings"><i class="ti-settings"></i></a>
-                    <!-- item-->
-                    <a href="" class="link" data-toggle="tooltip" title="Email"><i class="mdi mdi-gmail"></i></a>
-                    <!-- item-->
-                    <a href="" class="link" data-toggle="tooltip" title="Logout"><i class="mdi mdi-power"></i></a>
-                </div>
-                <!-- End Bottom points-->
+                <!-- End Sidebar scroll-->                
             </aside>
             <!-- ============================================================== -->
             <!-- End Left Sidebar - style you can find in sidebar.scss  -->

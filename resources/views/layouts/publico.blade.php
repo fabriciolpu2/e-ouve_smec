@@ -48,7 +48,7 @@
                 <!-- Logo -->
                 <!-- ============================================================== -->
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="#">
                         <!-- Logo icon -->
                         <b>
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
@@ -64,6 +64,8 @@
                          <img src="../material/assets/images/logo-text.png" alt="homepage" class="dark-logo" />
                          <!-- Light Logo text -->    
                          <img src="../material/assets/images/logo-light-text.png" class="light-logo" alt="homepage" /></span> </a>
+
+
                 </div>
                 <!-- ============================================================== -->
                 <!-- End Logo -->
@@ -80,8 +82,9 @@
                         <!-- ============================================================== -->
                         <li class="nav-item hidden-sm-down search-box">
                             <a class="nav-link hidden-sm-down text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-search"></i> Acompanhar manifestação</a>
-                            <form class="app-search">
-                                <input type="text" class="form-control" placeholder="Nº de Protocolo"> <a class="srh-btn"><i class="ti-close"></i></a>
+                            <form class="app-search" action="/busca-protocolo/" method="POST" enctype="multipart/form-data">
+                                <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
+                                <input type="text" name="protocolo" class="form-control" placeholder="Nº de Protocolo"> <a class="srh-btn"><i class="ti-close"></i></a>
                                 <button type="submit" class="btn btn-success"> <i class="fa fa-search"></i> Acompanhar</button>
                             </form>
                         </li>
@@ -93,6 +96,7 @@
                     <ul class="navbar-nav my-lg-0">                       
                     </ul>
                 </div>
+                <div><a class="nav-link" style="color: azure" href="{{ route('login') }}">{{ __('Login') }}</a></div>
             </nav>
         </header>
         <!-- ============================================================== -->

@@ -54,11 +54,10 @@ return [
     | used globally for all e-mails that are sent by your application.
     |
     */
-
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
-    ],
+        'address' => env('MAIL_FROM_ADDRESS', 'fabriciolpu2@gmail.com'),
+        'name' => env('MAIL_FROM_NAME', 'Centro de Ciencia, Tecnologia e Inovação'),
+    ],    
 
     /*
     |--------------------------------------------------------------------------
@@ -84,9 +83,9 @@ return [
     |
     */
 
-    'username' => env('MAIL_USERNAME'),
+    'username' => env('MAIL_USERNAME','fabriciolpu2@gmail.com'),
 
-    'password' => env('MAIL_PASSWORD'),
+    'password' => env('MAIL_PASSWORD','j6p7dKMTN9'),
 
     /*
     |--------------------------------------------------------------------------
