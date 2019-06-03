@@ -11,6 +11,7 @@
     <title>Ouvidoria SMEC</title>
     <link href="../theme/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="../theme/css/public/style.css" rel="stylesheet">
+    <link href="../theme/assets/plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet">
     <!-- You can change the theme colors from here -->
     <link href="../theme/css/public/colors/blue.css" id="theme" rel="stylesheet">
     <script src="../theme/assets/plugins/jquery/jquery.min.js"></script>
@@ -80,6 +81,27 @@
     <script src="../theme/assets/plugins/sparkline/jquery.sparkline.min.js"></script>
     <script src="/theme/js/custom.min.js"></script>
     <script src="../theme/assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
+    <script src="../theme/assets/plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+
+    <script>
+       
+       jQuery('.mydatepicker, #datepicker').datepicker({
+            format: 'dd/mm/yyyy'
+        });
+        jQuery('#datepicker-autoclose').datepicker({
+            autoclose: true,
+            todayHighlight: true
+        });
+        
+
+        jQuery('#date-range').datepicker({
+            toggleActive: true
+        });
+        jQuery('#datepicker-inline').datepicker({
+            todayHighlight: true
+        });
+        
+    </script>
 </body>
 
 </html>

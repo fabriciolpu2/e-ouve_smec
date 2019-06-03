@@ -10,6 +10,7 @@ use App\Status;
 use App\MovimentacaoChamado;
 use Auth;
 use Request;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
@@ -111,7 +112,8 @@ class AdminController extends Controller
             .$chamado['created_at'] = date("m")
             .$chamado['tipo_id']
             .$chamado['id'];
-        $chamado->update(['token'=> $numeroProtocolo]);
+        DB::table('ouvidoria.chamados')->where('id', $chamado['id'])->update(array('token'=> $numeroProtocolo));
+        $chamado['token'] = $numeroProtocolo;
         //dd($chamado->tipo);
         return response()->json(array('chamado' => $chamado));
     }
@@ -130,7 +132,7 @@ class AdminController extends Controller
             .$chamado['created_at'] = date("m")
             .$chamado['tipo_id']
             .$chamado['id'];
-        $chamado->update(['token'=> $numeroProtocolo]);
+        DB::table('ouvidoria.chamados')->where('id', $chamado['id'])->update(array('token'=> $numeroProtocolo));
         
         return view('confirmacao_manifestacao', compact('chamado'));
 
@@ -151,10 +153,12 @@ class AdminController extends Controller
     public function movimentarManifestacao($id){
         $valores = Request::all();
         $chamado = Chamado::find($id);
+        //dd($valores);
         $chamado->update($valores);
+
         
         $mov['chamado_id'] = $chamado->id;
-        $mov['status'] = $chamado->status->descricao;
+        $mov['status_id'] = $valores['status_id'];
         $mov['atividade'] = $valores['atividade'];
         
         $mov['user'] = Auth::user()->name;

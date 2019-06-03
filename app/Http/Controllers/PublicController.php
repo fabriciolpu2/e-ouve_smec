@@ -8,6 +8,7 @@ use App\TipoChamado;
 use App\Assunto;
 use App\Status;
 use App\MovimentacaoChamado;
+use Illuminate\Support\Facades\DB;
 
 use Request;
 
@@ -65,13 +66,18 @@ class PublicController extends Controller
         if(empty($valores['nome_autor'])) {
             $valores['nome_autor'] = 'Anônimo';
         }
+        
         $chamado = Chamado::create($valores);
+        //dd($chamado);
         $numeroProtocolo = 
             $chamado['created_at'] = date("Y")
             .$chamado['created_at'] = date("m")
             .$chamado['tipo_id']
             .$chamado['id'];
-        $chamado->update(['token'=> $numeroProtocolo]);
+        $chamado['token'] = $numeroProtocolo;
+        DB::table('ouvidoria.chamados')->where('id', $chamado['id'])->update(array('token'=> $numeroProtocolo));
+        //$chamado->update(['token'=> $numeroProtocolo]);
+        //dd($chamado);
         //$chamado->update('token', $numeroProtocolo);
         //dd($numeroProtocolo);
         return view('confirmacao_manifestacao', compact('chamado'));

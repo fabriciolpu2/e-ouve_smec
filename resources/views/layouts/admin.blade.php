@@ -16,6 +16,7 @@
     <link href="/theme/assets/plugins/footable/css/footable.core.css" rel="stylesheet">
     <link href="/theme/css/style.css" rel="stylesheet">
     <link href="/theme/css/colors/blue.css" id="theme" rel="stylesheet">
+    <link href="../theme/assets/plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet">
     <script src="/theme/assets/plugins/jquery/jquery.min.js"></script>
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -47,16 +48,16 @@
                             <li class="nav-item hidden-sm-down search-box">
                                 <a class="nav-link hidden-sm-down text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-search"></i></a>
                                 <form class="app-search">
-                                    <input type="text" class="form-control" placeholder="Search & enter"> <a class="srh-btn"><i class="ti-close"></i></a> </form>
+                                    <input type="text" class="form-control" placeholder="Nº de Protocolo"> <a class="srh-btn"><i class="ti-close"></i></a> </form>
                             </li>
                         </ul>
                         <ul class="navbar-nav my-lg-0">
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle text-muted text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="mdi mdi-message"></i>
+                                {{-- <a class="nav-link dropdown-toggle text-muted text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="mdi mdi-message"></i>
                                     <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right mailbox scale-up">                                    
-                                </div>
+                                </div> --}}
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -85,6 +86,7 @@
             <aside class="left-sidebar">
                 <div class="scroll-sidebar">
                     <div class="user-profile" style="background: url(/material/assets/images/background/user-info.jpg) no-repeat;">
+                    
 
                         <div class="profile-img"> <img src="/img/profile.png" alt="user" /> </div>
                         <div class="profile-text"> <a href="#" class="" data-toggle="" role="" aria-haspopup="true" aria-expanded="true">{{ Auth::user()->name }} <span class="caret"></span></a>
@@ -112,13 +114,13 @@
                                 </ul>
                             </li>
                             <li>
-                                <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-file"></i><span class="hide-menu">Relatórios</span></a>
+                                <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-chart-pie"></i><span class="hide-menu">Relatórios</span></a>
                                 <ul aria-expanded="false" class="collapse">
-                                    <li><a href="/manifestacoes/denuncias">Denuncias</a></li>                                    
+                                    <li><a href="#">#</a></li>
                                 </ul>
                             </li>
                             <li>
-                                <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-file"></i><span class="hide-menu">Usuários</span></a>
+                                <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-account-multiple"></i><span class="hide-menu">Usuários</span></a>
                                 <ul aria-expanded="false" class="collapse">
                                     <li><a href="/admin/usuarios/cadastrar">Cadastrar Usuário</a></li>
                                     <li><a href="/admin/usuarios/">Listar usuários</a></li>
@@ -151,5 +153,23 @@
         <script src="/theme/assets/plugins/footable/js/footable.all.min.js"></script>
         <script src="/theme/assets/plugins/bootstrap-select/bootstrap-select.min.js" type="text/javascript"></script>
         <script src="/theme/js/footable-init.js"></script>
+        <script src="../theme/assets/plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+
+        <script>
+            jQuery('.mydatepicker, #datepicker').datepicker({
+                format: 'dd/mm/yyyy'
+            });
+            jQuery('#datepicker-autoclose').datepicker({
+                autoclose: true,
+                todayHighlight: true
+            });
+            jQuery('#date-range').datepicker({
+                toggleActive: true
+            });
+            jQuery('#datepicker-inline').datepicker({
+                todayHighlight: true
+            });
+            
+        </script>
     </body>
 </html>

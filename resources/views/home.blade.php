@@ -16,10 +16,10 @@
                                 <th>Autor</th>
                                 <th>Tipo</th>
                                 <th>Insitituição</th>
-                                <th>Token</th>
+                                <th>Protocolo</th>
                                 <th>Status</th>
                                 <th>Data</th>                                
-                                <th>Action</th>
+                                <th>Movimentar</th>
                             </tr>
                         </thead>
                         <tbody class="tabela_manifestacoes">

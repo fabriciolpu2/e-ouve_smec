@@ -42,8 +42,13 @@
                                                                                                                                 
                                 </select>
                             </div>                        
-                            <div class="col-md-12 m-b-20">
-                                <input type="date" class="form-control" placeholder="Data" id="data_evento" name="data_evento" >
+                            <div class="col-md-12 m-b-20">                                
+                                <div class="input-group">                                        
+                                        <input type="text" name="data_evento" id="data_evento" class="form-control mydatepicker" placeholder="" required>
+                                        <div class="input-group-append">
+                                            <span class="input-group-text"><i class="icon-calender"></i></span>
+                                        </div>
+                                    </div>
                             </div>
                             <div class="col-md-12 m-b-20">
                                 <input type="text" class="form-control" placeholder="Assunto" name="titulo" required>
@@ -92,15 +97,15 @@
         $('.options_instituicoes').remove()        
     }    
     $('.modal-footer').on('click', '.save', function() {
-        console.log("Salvando");
-        console.log($('input[name=_token]').val())
-        console.log($('#tipo-manifestacao').val())
-        console.log($('input[name=nome_autor]').val())
-        console.log($('#instituicao').val())
-        console.log($('input[name=data_evento]').val())
-        console.log($('#assunto_id').val())
-        console.log($('input[name=titulo]').val())
-        console.log($('input[name=relato]').val())
+        // console.log("Salvando");
+        // console.log($('input[name=_token]').val())
+        // console.log($('#tipo-manifestacao').val())
+        // console.log($('input[name=nome_autor]').val())
+        // console.log($('#instituicao').val())
+        // console.log($('input[name=data_evento]').val())
+        // console.log($('#assunto_id').val())
+        // console.log($('input[name=titulo]').val())
+        // console.log($('input[name=relato]').val())
         $.ajax ({
             type: 'post',
             url: '/manifestacao/create',

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
+use App\User;
 class CategoriasSeed extends Seeder
 {
     /**
@@ -11,6 +11,11 @@ class CategoriasSeed extends Seeder
      */
     public function run()
     {
+        DB::table('users')->insert([
+            'name' => 'Fabricio Silva',
+            'email' => 'fabriciolpu2@gmail.com',
+            'password' => bcrypt('thmpv77d6f')
+        ]);
         DB::table('ouvidoria.tipos_instituicao')->insert([
             'descricao' => 'Escolas Municipais'
         ]);

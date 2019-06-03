@@ -14,14 +14,18 @@ class CreateMovimentacaoChamadosTable extends Migration
     public function up()
     {
         Schema::create('ouvidoria.movimentacao_chamados', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('status');
+            $table->bigIncrements('id');            
             $table->string('user');
             $table->string('atividade');
             $table->unsignedInteger('chamado_id');
             $table->timestamps();
+            $table->unsignedInteger('status_id')->nullable();
 
             $table->foreign('chamado_id')->references('id')->on('ouvidoria.chamados')->onDelete('cascade');
+            $table->foreign('status_id')
+                ->references('id')
+                ->on('ouvidoria.status')
+                ->onDelete('cascade');
         });
     }
 

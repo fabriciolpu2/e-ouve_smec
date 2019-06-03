@@ -18,7 +18,7 @@ class CreateChamadosTable extends Migration
             $table->string('titulo')->nullable();            
             $table->text('relato')->nullable();
             $table->string('nome_autor')->default("Anonimo");
-            $table->string('token')->unique();
+            $table->string('token', 20)->unique();
             $table->date('data_relato')->nullable();
             $table->unsignedInteger('tipo_id')->nullable();
             $table->unsignedInteger('instituicao_id')->nullable();

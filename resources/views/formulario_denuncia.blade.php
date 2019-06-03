@@ -55,9 +55,14 @@
                                 </div>
                             </div>
                                 <div class="col-md-8">
-                                    <div class="form-group">
+                                    <div class="form-group has-success">
                                         <label class="control-label">Data da Ocorrência</label>
-                                        <input type="date" name="data_relato" class="form-control" placeholder="dd/mm/yyyy">
+                                        <div class="input-group">                                        
+                                            <input type="text" name="data_relato" class="form-control mydatepicker" id="mydatepicker" placeholder="dd/mm/yyyy" required>
+                                            <div class="input-group-append">
+                                                <span class="input-group-text"><i class="icon-calender"></i></span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -88,7 +93,10 @@
     <!-- Row -->        
 </div>
 <script>
-
+        $(function() {
+            console.log('aquo');
+            $("#mydatepicker").datepicker({ dateFormat: "yy-mm-dd" }).val()
+        });
     var atualizaDados = function () {
         // $.ajax({
         //     type: 'get',
