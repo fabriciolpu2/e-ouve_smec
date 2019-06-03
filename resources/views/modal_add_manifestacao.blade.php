@@ -119,7 +119,7 @@
                     alert("Erro");
                 } else {    
                     //console.log(data.chamado.tipo.id)
-                    alert("Token: "+data.chamado.token);                    
+                    alert("Nº Protocolo: "+data.chamado.token);                    
                     $('.tabela_manifestacoes').append(
                         "<tr class='id"+ data.chamado.id + "'>"+
                             "<td>"+data.chamado.id+"</td>"+

@@ -60,13 +60,13 @@
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <img src="/material/assets/images/users/1.jpg" alt="user" class="profile-pic" />
+                                    <img src="/img/profile.png" alt="user" class="profile-pic" />
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right scale-up">
                                     <ul class="dropdown-user">
                                         <li>
                                             <div class="dw-user-box">
-                                                <div class="u-img"><img src="/material/assets/images/users/1.jpg" alt="user"></div>
+                                                <div class="u-img"><img src="/img/profile.png" alt="user"></div>
                                                 <div class="u-text">
                                                     <h4>{{ Auth::user()->name }}</h4>
                                                     {{ Auth::user()->email }}</div>
@@ -86,7 +86,7 @@
                 <div class="scroll-sidebar">
                     <div class="user-profile" style="background: url(/material/assets/images/background/user-info.jpg) no-repeat;">
 
-                        <div class="profile-img"> <img src="/material/assets/images/users/profile.png" alt="user" /> </div>
+                        <div class="profile-img"> <img src="/img/profile.png" alt="user" /> </div>
                         <div class="profile-text"> <a href="#" class="" data-toggle="" role="" aria-haspopup="true" aria-expanded="true">{{ Auth::user()->name }} <span class="caret"></span></a>
                         </div>
                     </div>

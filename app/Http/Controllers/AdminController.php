@@ -105,8 +105,13 @@ class AdminController extends Controller
         if(empty($valores['nome_autor'])) {
             $valores['nome_autor'] = 'Anônimo';
         }
-        dd($chamado['id']);
         $chamado = Chamado::create($valores);
+        $numeroProtocolo = 
+            $chamado['created_at'] = date("Y")
+            .$chamado['created_at'] = date("m")
+            .$chamado['tipo_id']
+            .$chamado['id'];
+        $chamado->update(['token'=> $numeroProtocolo]);
         //dd($chamado->tipo);
         return response()->json(array('chamado' => $chamado));
     }
@@ -120,7 +125,12 @@ class AdminController extends Controller
             $valores['nome_autor'] = 'Anônimo';
         }
         $chamado = Chamado::create($valores);
-        dd($chamado['id']);
+        $numeroProtocolo = 
+            $chamado['created_at'] = date("Y")
+            .$chamado['created_at'] = date("m")
+            .$chamado['tipo_id']
+            .$chamado['id'];
+        $chamado->update(['token'=> $numeroProtocolo]);
         
         return view('confirmacao_manifestacao', compact('chamado'));
 

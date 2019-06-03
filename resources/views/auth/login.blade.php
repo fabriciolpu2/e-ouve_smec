@@ -10,9 +10,9 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
-    <title>Material Pro Admin Template - The Most Complete & Trusted Bootstrap 4 Admin Template</title>
+    <title>Ouvidoria SMEC - Login</title>
     <!-- Bootstrap Core CSS -->
-    <link href="/theme/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">    
+    <link href="/theme/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="/theme/css/style.css" rel="stylesheet">
     <!-- You can change the theme colors from here -->
@@ -36,9 +36,11 @@
     <!-- ============================================================== -->
     <!-- Main wrapper - style you can find in pages.scss -->
     <!-- ============================================================== -->
-    <section id="wrapper" class="login-register login-sidebar"  style="background-image:url(/material/assets/images/background/login-register.jpg);">
-  <div class="login-box card">
-    <div class="card-body">
+    <section id="wrapper">
+        {{-- <div class="login-register" style="background-image:url(../assets/images/background/login-register.jpg);"> --}}
+          <div class="login-register" style="background-color: lightgrey">
+            <div class="login-box card">
+            <div class="card-body">
       <form class="form-horizontal form-material" id="loginform" action="{{ route('login') }}" method="POST">
             @csrf
             <div class="m-b-0 text-black" style="text-align: center"><i class="fa fa-headphones fa-2x"></i> Ouvidoria SMEC</div>
@@ -115,32 +117,34 @@
       </form>
     </div>
   </div>
+</div>
+
 </section>
-    <!-- ============================================================== -->
-    <!-- End Wrapper -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- All Jquery -->
-    <!-- ============================================================== -->
-    <script src="/theme/assets/plugins/jquery/jquery.min.js"></script>
-    <!-- Bootstrap tether Core JavaScript -->
-    <script src="/theme/assets/plugins/popper/popper.min.js"></script>
-    <script src="/theme/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-    <!-- slimscrollbar scrollbar JavaScript -->
-    <script src="/theme/js/jquery.slimscroll.js"></script>
-    <!--Wave Effects -->
-    <script src="/theme/js/waves.js"></script>
-    <!--Menu sidebar -->
-    <script src="/theme/js/sidebarmenu.js"></script>
-    <!--stickey kit -->
-    <script src="/theme/assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
-    <script src="/theme/assets/plugins/sparkline/jquery.sparkline.min.js"></script>
-    <!--Custom JavaScript -->
-    <script src="/theme/js/custom.min.js"></script>
-    <!-- ============================================================== -->
-    <!-- Style switcher -->
-    <!-- ============================================================== -->
-    <script src="/theme/assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
+<!-- ============================================================== -->
+<!-- End Wrapper -->
+<!-- ============================================================== -->
+<!-- ============================================================== -->
+<!-- All Jquery -->
+<!-- ============================================================== -->
+<script src="../theme/assets/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap tether Core JavaScript -->
+<script src="../theme/assets/plugins/popper/popper.min.js"></script>
+<script src="../theme/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<!-- slimscrollbar scrollbar JavaScript -->
+<script src="/theme/js/jquery.slimscroll.js"></script>
+<!--Wave Effects -->
+<script src="/theme/js/waves.js"></script>
+<!--Menu sidebar -->
+<script src="/theme/js/sidebarmenu.js"></script>
+<!--stickey kit -->
+<script src="../theme/assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
+<script src="../theme/assets/plugins/sparkline/jquery.sparkline.min.js"></script>
+<!--Custom JavaScript -->
+<script src="/theme/js/custom.min.js"></script>
+<!-- ============================================================== -->
+<!-- Style switcher -->
+<!-- ============================================================== -->
+<script src="/theme/assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
 </body>
 
 </html>
