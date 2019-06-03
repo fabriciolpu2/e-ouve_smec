@@ -65,7 +65,15 @@ class PublicController extends Controller
         if(empty($valores['nome_autor'])) {
             $valores['nome_autor'] = 'Anônimo';
         }
-        $chamado = Chamado::create($valores);   
+        $chamado = Chamado::create($valores);
+        $numeroProtocolo = 
+            $chamado['created_at'] = date("Y")
+            .$chamado['created_at'] = date("m")
+            .$chamado['tipo_id']
+            .$chamado['id'];
+        $chamado->update(['token'=> $numeroProtocolo]);
+        //$chamado->update('token', $numeroProtocolo);
+        //dd($numeroProtocolo);
         return view('confirmacao_manifestacao', compact('chamado'));
 
     }

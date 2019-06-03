@@ -8,7 +8,7 @@ use App\TipoChamado;
 use App\Assunto;
 use App\Status;
 use App\MovimentacaoChamado;
-
+use Auth;
 use Request;
 
 class AdminController extends Controller
@@ -19,8 +19,7 @@ class AdminController extends Controller
     }
     public function listaChamados()
     {
-        $chamados = Chamado::paginate();
-
+        $chamados = Chamado::paginate(100);
         $tiposInstituicao = TipoInstituicao::all();
         $instituicoes = Instituicao::where('tipo_id', 1)->get();
         $tipoChamado = TipoChamado::all();
@@ -106,7 +105,7 @@ class AdminController extends Controller
         if(empty($valores['nome_autor'])) {
             $valores['nome_autor'] = 'Anônimo';
         }
-        //dd($valores);
+        dd($chamado['id']);
         $chamado = Chamado::create($valores);
         //dd($chamado->tipo);
         return response()->json(array('chamado' => $chamado));
@@ -121,6 +120,7 @@ class AdminController extends Controller
             $valores['nome_autor'] = 'Anônimo';
         }
         $chamado = Chamado::create($valores);
+        dd($chamado['id']);
         
         return view('confirmacao_manifestacao', compact('chamado'));
 
@@ -146,7 +146,8 @@ class AdminController extends Controller
         $mov['chamado_id'] = $chamado->id;
         $mov['status'] = $chamado->status->descricao;
         $mov['atividade'] = $valores['atividade'];
-        $mov['user'] = 1;
+        
+        $mov['user'] = Auth::user()->name;
         //dd($mov);
         $movimentacao = MovimentacaoChamado::create($mov);
         return redirect('/home');

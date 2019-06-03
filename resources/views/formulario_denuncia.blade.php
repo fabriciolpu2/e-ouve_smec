@@ -13,17 +13,15 @@
                     <form action="/manifestacao/nova" method="POST" enctype="multipart/form-data">
                         <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
                         <input type="hidden" name="tipo_id" value="{{$manifestacao['tipo_id']}}" />
-                        <div class="form-body">                           
-                            <div class="row p-t-20">
-                                <div class="col-md-12">
-                                    <div class="form-group">
+                        <div class="form-body">
+                                <div class="col-md-8">
+                                
+                                    <div class="form-group has-success">
                                         <label class="control-label">Nome</label>
-                                        @input(['type' => 'text', 'name'=>'nome_autor', 'place'=>'Nome Completo'])
-                                        <small class="form-control-feedback">Nome é opcional</small>
+                                        @input(['type' => 'text', 'name'=>'nome_autor', 'place'=>'Nome Completo (Opcional)'])
                                     </div>
-                                </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-8">
 
                                 <div class="form-group has-success">
                                         <label class="control-label">Natureza da Manifestação</label>
@@ -35,7 +33,7 @@
                                         </select>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-8">
 
                                 <div class="form-group has-success">
                                         <label class="control-label">Instituição</label>
@@ -48,40 +46,40 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-8">
                                 <div class="form-group has-success">
-                                    <label class="control-label">Nome da Escola </label>
+                                    <label class="control-label">Nome da Instituição</label>
                                     <select class="form-control custom-select" id="instituicao" name="instituicao_id">
 
                                     </select>
                                 </div>
                             </div>
-                                <div class="col-md-6">
+                                <div class="col-md-8">
                                     <div class="form-group">
-                                        <label class="control-label">Data do Evento</label>
+                                        <label class="control-label">Data da Ocorrência</label>
                                         <input type="date" name="data_relato" class="form-control" placeholder="dd/mm/yyyy">
                                     </div>
                                 </div>
                             </div>
-                            <div class="row p-t-20">
-                                <div class="col-md-12">
+                            <div class="col-md-8">
                                     <div class="form-group">
                                         <label class="control-label">Assunto</label>
                                         <input type="text" class="form-control" placeholder="Assunto" name="titulo" required>
-                                </div>
+                                    </div>
                             </div>
                             <!--/row-->
-                            <div class="col-md-12">
+                            <div class="col-md-8">
                                 <div class="form-group">
                                     <label class="control-label">{{$manifestacao['tipo']}}</label>
-                                    <textarea class="form-control" name="relato" rows="5" required></textarea>
+                                    <textarea class="form-control" name="relato" rows="10" required></textarea>
                                 </div>
                             </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn_pesquisar btn btn-success"> <i class="fa fa-check"></i> Confirmar</button>
+                                <button type="button" class="btn btn-inverse">Voltar</button>
+                            </div>
                         </div>
-                        <div class="form-actions">
-                            <button type="submit" class="btn_pesquisar btn btn-success"> <i class="fa fa-check"></i> Save</button>
-                            <button type="button" class="btn btn-inverse">Cancel</button>
-                        </div>
+                        
                     </form>
                 </div>
             </div>

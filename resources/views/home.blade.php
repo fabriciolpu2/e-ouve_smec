@@ -5,7 +5,7 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title"><button type="button" class="btn btn-info btn-rounded" data-toggle="modal" data-target="#add-contact">Add Manifestação</button></h4>
+                <h4 class="card-title"><button type="button" class="btn btn-info btn-rounded" data-toggle="modal" data-target="#add-contact"> <b>+</b> Manifestação</button></h4>
                 
                 <h6 class="card-subtitle"></h6>
                 <div class="table-responsive">
@@ -31,7 +31,7 @@
                                     <td>{{$c->instituicao->nome}}</td>
                                     <td>{{$c->token}}</td>
                                     <td><span class="label label-{{$c->status->style}}">{{$c->status->descricao}}</span> </td>
-                                    <td>{{$c->created_at}}</td>
+                                    <td>{{ date("d/m/Y - H:m", strtotime($c->created_at))}}</td>
                                     <td>
                                         <a class="btn btn-primary" href="/manifestacao/visualizar/{{$c->id}}" role="button"><i class="fa fa-search"></i> Visualizar</a>                                        
                                     </td>

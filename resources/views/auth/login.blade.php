@@ -12,11 +12,11 @@
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
     <title>Material Pro Admin Template - The Most Complete & Trusted Bootstrap 4 Admin Template</title>
     <!-- Bootstrap Core CSS -->
-    <link href="/material/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">    
+    <link href="/theme/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">    
     <!-- Custom CSS -->
-    <link href="/material/css/style.css" rel="stylesheet">
+    <link href="/theme/css/style.css" rel="stylesheet">
     <!-- You can change the theme colors from here -->
-    <link href="/material/css/colors/blue.css" id="theme" rel="stylesheet">
+    <link href="/theme/css/colors/blue.css" id="theme" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -41,7 +41,7 @@
     <div class="card-body">
       <form class="form-horizontal form-material" id="loginform" action="{{ route('login') }}" method="POST">
             @csrf
-        <a href="javascript:void(0)" class="text-center db"><img src="/material/assets/images/logo-icon.png" alt="Home" /><br/><img src="/material/assets/images/logo-text.png" alt="Home" /></a>        
+            <div class="m-b-0 text-black" style="text-align: center"><i class="fa fa-headphones fa-2x"></i> Ouvidoria SMEC</div>
         <div class="form-group m-t-40">
           <div class="col-xs-12">            
             <input id="email" class="form-control @error('email') is-invalid @enderror" 
@@ -122,25 +122,25 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    <script src="/material/assets/plugins/jquery/jquery.min.js"></script>
+    <script src="/theme/assets/plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="/material/assets/plugins/popper/popper.min.js"></script>
-    <script src="/material/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/theme/assets/plugins/popper/popper.min.js"></script>
+    <script src="/theme/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
     <!-- slimscrollbar scrollbar JavaScript -->
-    <script src="/material/js/jquery.slimscroll.js"></script>
+    <script src="/theme/js/jquery.slimscroll.js"></script>
     <!--Wave Effects -->
-    <script src="/material/js/waves.js"></script>
+    <script src="/theme/js/waves.js"></script>
     <!--Menu sidebar -->
-    <script src="/material/js/sidebarmenu.js"></script>
+    <script src="/theme/js/sidebarmenu.js"></script>
     <!--stickey kit -->
-    <script src="/material/assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
-    <script src="/material/assets/plugins/sparkline/jquery.sparkline.min.js"></script>
+    <script src="/theme/assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
+    <script src="/theme/assets/plugins/sparkline/jquery.sparkline.min.js"></script>
     <!--Custom JavaScript -->
-    <script src="/material/js/custom.min.js"></script>
+    <script src="/theme/js/custom.min.js"></script>
     <!-- ============================================================== -->
     <!-- Style switcher -->
     <!-- ============================================================== -->
-    <script src="/material/assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
+    <script src="/theme/assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
 </body>
 
 </html>

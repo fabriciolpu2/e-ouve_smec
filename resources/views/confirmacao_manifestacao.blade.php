@@ -9,7 +9,8 @@
             <div style="text-align: left" >
                 <h4 class="m-b-0">Nome: <b>{{$chamado->nome_autor}}</b></h4>
                 <h4 class="m-b-0">Instituição: <b>{{$chamado->instituicao->nome}}</b></h4>
-                <h4 class="m-b-0">Instituição: <b>{{$chamado->instituicao->nome}}</b></h4>
+                <h4 class="m-b-0">Natureza da ocorrência: <b>{{$chamado->assunto->descricao}}</b></h4>
+                <h4 class="m-b-0">Data da ocorrência: <b>{{$chamado->data_relato = date("d/m/Y")}}</b></h4>
                 <h4 class="m-b-0">Titulo: <b>{{$chamado->titulo}}</b></h4>
                 <h4 class="m-b-0">Relato: <b>{{$chamado->relato}}</b></h4>
             </div>            
