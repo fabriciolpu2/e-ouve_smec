@@ -12,7 +12,7 @@ class CategoriasSeed extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'name' => 'Fabricio Silva',
+            'name' => 'Administrador',
             'email' => 'fabriciolpu2@gmail.com',
             'password' => bcrypt('thmpv77d6f')
         ]);
