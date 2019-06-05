@@ -93,8 +93,7 @@
     <!-- Row -->        
 </div>
 <script>
-        $(function() {
-            console.log('aquo');
+        $(function() {            
             $("#mydatepicker").datepicker({ dateFormat: "yy-mm-dd" }).val()
         });
     var atualizaDados = function () {

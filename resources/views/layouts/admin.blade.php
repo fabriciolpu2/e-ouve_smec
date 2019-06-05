@@ -16,7 +16,8 @@
     <link href="/theme/assets/plugins/footable/css/footable.core.css" rel="stylesheet">
     <link href="/theme/css/style.css" rel="stylesheet">
     <link href="/theme/css/colors/blue.css" id="theme" rel="stylesheet">
-    <link href="../theme/assets/plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet">
+    
+    <link href="/theme/assets/plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet">
     <script src="/theme/assets/plugins/jquery/jquery.min.js"></script>
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -153,7 +154,7 @@
         <script src="/theme/assets/plugins/footable/js/footable.all.min.js"></script>
         <script src="/theme/assets/plugins/bootstrap-select/bootstrap-select.min.js" type="text/javascript"></script>
         <script src="/theme/js/footable-init.js"></script>
-        <script src="../theme/assets/plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+        <script src="/theme/assets/plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
 
         <script>
             jQuery('.mydatepicker, #datepicker').datepicker({

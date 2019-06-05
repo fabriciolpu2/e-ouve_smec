@@ -20,23 +20,32 @@ class CategoriasSeed extends Seeder
             'descricao' => 'Escolas Municipais'
         ]);
         DB::table('ouvidoria.tipos_instituicao')->insert([
+            'descricao' => 'Escolas Municipais Proinfância'
+        ]);
+        DB::table('ouvidoria.tipos_instituicao')->insert([
             'descricao' => 'Casas Mãe'
         ]);
         DB::table('ouvidoria.tipos_instituicao')->insert([
-            'descricao' => 'SMEC'
+            'descricao' => 'Escolas Indigenas'
         ]);
-        DB::table('ouvidoria.instituicoes')->insert([
-            'nome' => 'Escola Municipal 01',
-            'tipo_id' => 1
+        DB::table('ouvidoria.tipos_instituicao')->insert([
+            'descricao' => 'Escolas Rurais'
         ]);
-        DB::table('ouvidoria.instituicoes')->insert([
-            'nome' => 'Casa Mae 02',
-            'tipo_id' => 2
+        DB::table('ouvidoria.tipos_instituicao')->insert([
+            'descricao' => 'Unidades SMEC'
         ]);
-        DB::table('ouvidoria.instituicoes')->insert([
-            'nome' => 'Setor RH',
-            'tipo_id' => 3
-        ]);
+        // DB::table('ouvidoria.instituicoes')->insert([
+        //     'nome' => 'Escola Municipal 01',
+        //     'tipo_id' => 1
+        // ]);
+        // DB::table('ouvidoria.instituicoes')->insert([
+        //     'nome' => 'Casa Mae 02',
+        //     'tipo_id' => 2
+        // ]);
+        // DB::table('ouvidoria.instituicoes')->insert([
+        //     'nome' => 'Setor RH',
+        //     'tipo_id' => 3
+        // ]);
            
         
         DB::table('ouvidoria.tipos_chamado')->insert([

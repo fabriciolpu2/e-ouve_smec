@@ -44,7 +44,8 @@ Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 Route::post('logout', 'Auth\LoginController@logout');
 
 Route::get('/admin/usuarios/cadastrar', 'Auth\RegisterController@showRegistrationForm')->name('register');
-Route::post('register', 'Auth\RegisterController@register');
+Route::POST('/admin/usuarios/cadastrar', 'Auth\RegisterController@addUser')->name('addUser');
+//Route::post('register', 'Auth\RegisterController@register');
 
 Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
 Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
