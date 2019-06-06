@@ -35,7 +35,7 @@
                 <div class="navbar-header">
                     <a class="navbar-brand" href="#">
                         <b>
-                            <div class="m-b-0 text-white"><i class="fa fa-headphones fa-2x"></i> Ouvidoria SMEC</div>
+                                <a href="/" class="m-b-0 text-white"><i class="fa fa-headphones fa-2x"></i> Ouvidoria SMEC</a>
                             
                             {{-- <img src="../material/assets/images/logo-light-icon.png" alt="homepage" class="light-logo" /> --}}
                         </b>
@@ -48,8 +48,8 @@
                             <a class="nav-link hidden-sm-down text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-search"></i> Acompanhar manifestação</a>
                             <form class="app-search" action="/busca-protocolo/" method="POST" enctype="multipart/form-data">
                                 <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
-                                <input type="text" name="protocolo" class="form-control" placeholder="Nº de Protocolo"> <a class="srh-btn"><i class="ti-close"></i></a>
-                                <button type="submit" class="btn btn-success"> <i class="fa fa-search"></i> Acompanhar</button>
+                                <input type="text" name="protocolo" class="form-control" placeholder="Nº de Protocolo" required> <a class="srh-btn"><i class="ti-close"></i></a>
+                                <button type="submit" class="btn btn-success col-12"> <i class="fa fa-search"></i> Acompanhar</button>
                             </form>
                         </li>
                     </ul>
@@ -67,7 +67,10 @@
                     </div>
                 </div>
             </div>
-            <footer class="footer">Prefeitura Municipal de Boa Vista</footer>
+            <footer class="footer">
+                <img src="/img/logo-pmbv.png" alt="" style="height: 50px">
+                
+            </footer>
         </div>
     </div>
 

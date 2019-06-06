@@ -37,12 +37,13 @@
                         <a class="navbar-brand" href="index.html">
                             <b>
                                 
-                                
                             </b>
                             <span>
                              
                     </div>
-                    <div class="navbar-collapse">
+                    
+                    <div class="navbar-collapse">                            
+                            
                         <ul class="navbar-nav mr-auto mt-md-0">
                             <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="mdi mdi-menu"></i></a> </li>
                             <li class="nav-item"> <a class="nav-link sidebartoggler hidden-sm-down text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
@@ -51,7 +52,9 @@
                                 <form class="app-search">
                                     <input type="text" class="form-control" placeholder="Nº de Protocolo"> <a class="srh-btn"><i class="ti-close"></i></a> </form>
                             </li>
+                            
                         </ul>
+                        <div class="m-b-0 text-white"><i class="fa fa-headphones fa-2x" style="text-align: center"></i> Ouvidoria SMEC</div>
                         <ul class="navbar-nav my-lg-0">
                             <li class="nav-item dropdown">
                                 {{-- <a class="nav-link dropdown-toggle text-muted text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="mdi mdi-message"></i>
@@ -79,8 +82,10 @@
                                         <li><a class="dropdown-item" href="{{ route('logout') }}">{{ __('Logout') }}</a></li>
                                     </ul>
                                 </div>
+                                
                             </li>
                         </ul>
+                        
                     </div>
                 </nav>
             </header>
@@ -101,7 +106,7 @@
                                 <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-file"></i><span class="hide-menu">Manifestações</span></a>
                                 <ul aria-expanded="false" class="collapse">
                                     <li><a href="/home">Exibir Todas</a></li>
-                                    <li><a href="/manifestacoes/type/1">Denuncias</a></li>
+                                    <li><a href="/manifestacoes/type/1">Denúncias</a></li>
                                     <li><a href="/manifestacoes/type/2">Reclamações</a></li>
                                     <li><a href="/manifestacoes/type/3">Sugestões</a></li>
                                     <li><a href="/manifestacoes/type/4">Elogios</a></li>
@@ -136,8 +141,8 @@
                     <br>
                      @yield('content')
                 </div>
-                <footer class="footer">
-                    © 2019 Prefeitura Municipal de Boa Vista
+                <footer class="footer" style="text-align: center">
+                    <img src="/img/logo-pmbv.png" alt="" style="height: 50px">
                 </footer>
             </div>
         </div>

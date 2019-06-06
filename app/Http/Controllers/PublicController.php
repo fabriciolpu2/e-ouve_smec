@@ -19,6 +19,10 @@ class PublicController extends Controller
         $protocolo = Request::all();        
         $chamado = Chamado::where('token', $protocolo['protocolo'])->first();        
         $status = Status::all();
+        
+        if($chamado == null){
+            return redirect('/');
+        }
         return view('busca_manifestacao', compact('chamado', 'status'));
     }
     
@@ -29,7 +33,7 @@ class PublicController extends Controller
         $instituicoes = Instituicao::where('tipo_id', 1)->get();
         $manifestacao;
         if($type == 'denuncia'){
-            $manifestacao['tipo'] = 'Denuncia';
+            $manifestacao['tipo'] = 'Denúncia';
             $manifestacao['style'] = 'danger';
             $manifestacao['tipo_id'] = 1;
             

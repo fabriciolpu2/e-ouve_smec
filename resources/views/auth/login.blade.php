@@ -43,7 +43,7 @@
             <div class="card-body">
       <form class="form-horizontal form-material" id="loginform" action="{{ route('login') }}" method="POST">
             @csrf
-            <div class="m-b-0 text-black" style="text-align: center"><i class="fa fa-headphones fa-2x"></i> Ouvidoria SMEC</div>
+            <div class="m-b-0 text-black" style="text-align: center"><i class="fa fa-headphones fa-2x"></i> Ouvidoria SMEC</div>            
         <div class="form-group m-t-40">
           <div class="col-xs-12">            
             <input id="email" class="form-control @error('email') is-invalid @enderror" 
@@ -87,7 +87,11 @@
           <div class="col-xs-12">
             <button class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">Log In</button>
           </div>
-        </div>        
+        </div>    
+        <div style="text-align: center">
+            <img src="/img/logo-pmbv.png" alt="" style="height: 30px">    
+        </div>
+        
       </form>
       <form class="form-horizontal" id="recoverform" action="{{ route('password.email') }}" method="POST">
             @csrf            
