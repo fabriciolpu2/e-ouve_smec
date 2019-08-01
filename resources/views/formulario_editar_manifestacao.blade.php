@@ -8,14 +8,14 @@
                 <div class="card-header"><h4 class="m-b-0 text-white">{{$chamado->tipo->descricao}}</h4></div>
                 <div class="card-body">
                     <div class="row p-t-20">
-                        <div class="col-md-4"><h4>Nome: <b>{{$chamado->nome_autor}}</b></h4></div>
-                        <div class="col-md-3"><h4>Nº Protocolo: <b>{{$chamado->token}}</b></h4></div>
-                        <div class="col-md-4"><h4>Tipo de Manifestação:<b> {{$chamado->tipo->descricao}}</b></h4></div>
-                        <div class="col-md-4"><h4>Assunto: <b>{{$chamado->assunto->descricao}}</b></h4></div>
-                        <div class="col-md-3"><h4>Data: <b>{{date("d/m/Y - H:m", strtotime($chamado->created_at))}}</b></h4></div>
-                        <div class="col-md-3"><h4>Insitituição:<b> {{$chamado->instituicao->nome}}</b></h4></div>
-                        <div class="col-md-12"><h4>Titulo: <b>{{$chamado->titulo}}</b></h4></div>
-                        <div class="col-md-12"><h4>Relato: <b>{{$chamado->relato}}</b></h4></div>
+                        <div class="col-md-4"><h4><b>Nome:</b> {{$chamado->nome_autor}}</h4></div>
+                        <div class="col-md-3"><h4><b> Nº Protocolo: </b>{{$chamado->token}}</h4></div>
+                        <div class="col-md-4"><h4><b>Tipo de Manifestação:</b> {{$chamado->tipo->descricao}}</h4></div>
+                        <div class="col-md-4"><h4><b>Assunto:</b> {{$chamado->assunto->descricao}}</h4></div>
+                        <div class="col-md-3"><h4><b>Data:</b> {{date("d/m/Y - H:m", strtotime($chamado->created_at))}}</h4></div>
+                        <div class="col-md-3"><h4><b>Insitituição: </b>{{$chamado->instituicao->nome}}</h4></div>
+                        <div class="col-md-12"><h4><b>Titulo:</b> {{$chamado->titulo}}</h4></div>
+                        <div class="col-md-12"><h4><b>Relato:</b> {{$chamado->relato}}</h4></div>
                     </div>
                     <div class="card-outline-{{$chamado->status->style}}">
                         <div class="card-header"><h4 class="m-b-0 text-white">Movimentações</h4></div>
@@ -38,6 +38,7 @@
     <div class="row">
         <div class="col-md-12" style="text-align: center">
             <a class="btn btn-primary" href="/home" role="button"><i class="fa fa-home"></i> Inicio</a>
+            <a class="btn btn-info" href="{{$chamado->id}}/imprimir" role="button"><i class="fa fa-print"></i> Imprimir</a>
         </div>
     </div>
 @else
@@ -70,6 +71,7 @@
                             <div class="form-actions" style="margin-left: 30px">
                                 <button type="submit" class="btn_pesquisar btn btn-success"> <i class="fa fa-check"></i> Editar</button>
                                 <button type="button" class="btn btn-inverse">Voltar</button>
+                                <a class="btn btn-info" href="{{$chamado->id}}/imprimir" role="button"><i class="fa fa-print"></i> Imprimir</a>
                             </div>
                             <br>
                         </div>

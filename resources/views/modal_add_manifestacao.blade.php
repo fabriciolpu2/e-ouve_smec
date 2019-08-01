@@ -54,7 +54,7 @@
                                 <input type="text" class="form-control" placeholder="Assunto" name="titulo" required>
                             </div>
                             <div class="col-md-12 m-b-20">
-                                <textarea class="form-control" name="relato" placeholder="Relato" rows="5" required></textarea>                                
+                                <textarea class="form-control" id="relato" name="relato" placeholder="Relato" rows="5" required></textarea>
                             </div>
                                                         
                         </div>
@@ -75,7 +75,8 @@
      $('#tipo-instituicao').change(function (event) { 
         limpar();       
         event.preventDefault();  
-        console.log($(this))      
+        console.log($(this))
+        console.log()
         $.ajax({
             type: 'get',
             url: '/instituicoes/'+ $(this).val(),
@@ -105,7 +106,7 @@
         // console.log($('input[name=data_evento]').val())
         // console.log($('#assunto_id').val())
         // console.log($('input[name=titulo]').val())
-        // console.log($('input[name=relato]').val())
+        console.log($('textarea[name=relato]').val())
         $.ajax ({
             type: 'post',
             url: '/manifestacao/create',
@@ -117,10 +118,10 @@
                 'assunto_id': $('#assunto_id').val(),
                 'data_relato': $('input[name=data_evento]').val(),
                 'titulo': $('input[name=titulo]').val(),
-                'relato': $('input[name=relato]').val()              
+                'relato': $('textarea[name=relato]').val()
             },
             success: function(data) {
-                if(data.erros) {                    
+                if(data.erros) {
                     alert("Erro");
                 } else {    
                     //console.log(data.chamado.tipo.id)

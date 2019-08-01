@@ -13,22 +13,22 @@
                         <thead>
                             <tr>
                                 <th>id</th>
-                                <th>Autor</th>
+                                <th style="max-width: 40px">Autor</th>
                                 <th>Tipo</th>
                                 <th>Insitituição</th>
                                 <th>Protocolo</th>
                                 <th>Status</th>
-                                <th>Data</th>                                
+                                <th>Data</th>
                                 <th>Movimentar</th>
                             </tr>
                         </thead>
                         <tbody class="tabela_manifestacoes">
-                            @foreach ($chamados as $c)                                                        
-                                <tr>
-                                    <td>{{$c->id}}</td>                                    
-                                    <td>{{$c->nome_autor}}</td>
+                            @foreach ($chamados as $c)
+                                <tr style="font-size: 14px">
+                                    <td>{{$c->id}}</td>
+                                    <td style="max-width: 220px">{{$c->nome_autor}}</td>
                                     <td><span class="label label-{{$c->tipo->style}}">{{$c->tipo->descricao}}</span> </td>
-                                    <td>{{$c->instituicao->nome}}</td>
+                                    <td>{{$c->instituicao['nome']}}</td>
                                     <td>{{$c->token}}</td>
                                     <td><span class="label label-{{$c->status->style}}">{{$c->status->descricao}}</span> </td>
                                     <td>{{ date("d/m/Y - H:m", strtotime($c->created_at))}}</td>

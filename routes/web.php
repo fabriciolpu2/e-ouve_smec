@@ -35,7 +35,7 @@ Route::get('/manifestacoes/usuario/{id}', 'AdminController@listaChamadosUsuario'
 Route::get('/admin/usuarios/cadastrar', 'Auth\RegisterController@showRegistrationForm')->name('register');
 Route::POST('/admin/usuarios/cadastrar', 'Auth\RegisterController@addUser')->name('addUser');
 Route::get('admin/usuarios/', 'AdminController@listaUsuarios')->name('listaUsuarios');
-
+Route::get('manifestacao/visualizar/{id}/imprimir', 'AdminController@imprimirManifestacao')->name('imprimirManifestacao');
 
 Route::get('/seguranca', 'HomeController@index');
 
