@@ -55,6 +55,12 @@ class PublicController extends Controller
             $manifestacao['tipo_id'] = 4;
             return view('formulario_denuncia', compact('tiposInstituicao', 'instituicoes', 'manifestacao', 'assuntos'));
         }
+        else if ($type == 'solicitacao') {
+            $manifestacao['tipo'] = 'Solicitacao';
+            $manifestacao['style'] = 'primary';
+            $manifestacao['tipo_id'] = 5;
+            return view('formulario_denuncia', compact('tiposInstituicao', 'instituicoes', 'manifestacao', 'assuntos'));
+        }
         
         
     }

@@ -30,6 +30,12 @@ Route::post('manifestacao/create', 'AdminController@manifestacaoSave')->name('ma
 Route::get('/home', 'AdminController@listaChamados')->name('home');
 Route::get('/manifestacoes/type/{id}', 'AdminController@listaChamadosType')->name('manifestacoes-tipo');
 Route::get('/manifestacoes/status/{id}', 'AdminController@listaChamadosStatus')->name('manifestacoes-status');
+Route::get('/manifestacoes/usuario/{id}', 'AdminController@listaChamadosUsuario')->name('manifestacoes-usuario');
+
+Route::get('/admin/usuarios/cadastrar', 'Auth\RegisterController@showRegistrationForm')->name('register');
+Route::POST('/admin/usuarios/cadastrar', 'Auth\RegisterController@addUser')->name('addUser');
+Route::get('admin/usuarios/', 'AdminController@listaUsuarios')->name('listaUsuarios');
+
 
 Route::get('/seguranca', 'HomeController@index');
 
@@ -43,8 +49,8 @@ Route::post('login', 'Auth\LoginController@login');
 Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 Route::post('logout', 'Auth\LoginController@logout');
 
-Route::get('/admin/usuarios/cadastrar', 'Auth\RegisterController@showRegistrationForm')->name('register');
-Route::POST('/admin/usuarios/cadastrar', 'Auth\RegisterController@addUser')->name('addUser');
+
+
 //Route::post('register', 'Auth\RegisterController@register');
 
 Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');

@@ -22,11 +22,11 @@
             </div>
 </div> --}}
 <div class="row">
-    <div class="col-12 m-t-30">
+    {{-- <div class="col-12 m-t-10">
         <h4 class="m-b-0">Texto descrição do sistema ouvidoria da SMEC - 3000-0000</h4>
         <p class="text-muted m-t-0 font-12"></p>
-    </div>
-    <div class="col-md-3">        
+    </div> --}}
+    <div class="col-md-3">
         <div class="card card-inverse card-danger" style="text-align: center">
             <a href="/manifestacao/denuncia">
                 <div class="card-header">
@@ -48,6 +48,20 @@
                 <div class="card-body" style="min-height: 220px">
                     <h2 style="color: azure">Reclamação</h2>
                     <h6 style="color: azure">Se você quer demonstrar a sua insatisfação com um serviço público. Você pode fazer críticas, relatar ineficiência. Também se aplica aos casos de omissão. Por exemplo, você procurou um atendimento ou serviço, e não teve resposta.</h6>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card card-inverse" style="text-align: center; background-color: limegreen">
+            <a href="/manifestacao/solicitacao">
+                <div class="card-header">
+                    <div class="m-b-0 text-white"><i class="fa fa-info fa-5x"></i></div>
+                </div>
+                <div class="card-body" style="min-height: 220px">
+                    <h2 style="color: azure">Solicitação</h2>
+                    <h6 style="color: azure">Se você deseja solicitar alguma informação sobre a Secretaria Municipal de Educação.</h6>
                 </div>
             </a>
         </div>

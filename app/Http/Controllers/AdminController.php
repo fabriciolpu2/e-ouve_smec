@@ -11,6 +11,7 @@ use App\MovimentacaoChamado;
 use Auth;
 use Request;
 use Illuminate\Support\Facades\DB;
+use App\User;
 
 class AdminController extends Controller
 {
@@ -33,6 +34,18 @@ class AdminController extends Controller
     public function listaChamadosType($id)
     {
         $chamados = Chamado::where('tipo_id', $id)->paginate();
+
+        $tiposInstituicao = TipoInstituicao::all();
+        $instituicoes = Instituicao::where('tipo_id', 1)->get();
+        $tipoChamado = TipoChamado::all();
+        $assuntos = Assunto::all();
+
+        //dd($chamados);
+        return view('home', compact('chamados', 'tiposInstituicao', 'tipoChamado', 'assuntos', 'instituicoes'));
+    }
+    public function listaChamadosUsuario($id)
+    {
+        $chamados = Chamado::where('user_id', $id)->paginate();
 
         $tiposInstituicao = TipoInstituicao::all();
         $instituicoes = Instituicao::where('tipo_id', 1)->get();
@@ -103,6 +116,8 @@ class AdminController extends Controller
         $token = str_random(12);
         $valores['token'] = $token;
         $valores['status_id'] = '1';
+
+        $valores['user_id'] = Auth::user()->id;
         if(empty($valores['nome_autor'])) {
             $valores['nome_autor'] = 'Anônimo';
         }
@@ -167,5 +182,8 @@ class AdminController extends Controller
         return redirect('/home');
     }
 
-    
+    public function listaUsuarios(){
+        $usuarios = User::all();
+        return view('admin.usuarios', compact('usuarios'));
+    }
 }

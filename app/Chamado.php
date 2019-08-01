@@ -16,7 +16,8 @@ class Chamado extends Model
         'token',
         'data_relato',
         'status_id',
-        'assunto_id'
+        'assunto_id',
+        'user_id'
     ];
     protected $date = ['created_at', 'updated_at', 'data_relato'];
     //protected $dateFormat = 'U';

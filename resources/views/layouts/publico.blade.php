@@ -68,8 +68,7 @@
                 </div>
             </div>
             <footer class="footer">
-                <img src="/img/logo-pmbv.png" alt="" style="height: 50px">
-                
+                <a href="https://www.boavista.rr.gov.br/" target="_blank"><img src="/img/logo-pmbv.png" alt="" style="height: 50px"></a>
             </footer>
         </div>
     </div>
