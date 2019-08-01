@@ -57,7 +57,7 @@
                                 <div class="col-md-8">
                                     <div class="form-group has-success">
                                         <label class="control-label">Data da Ocorrência</label>
-                                        <div class="input-group">                                        
+                                        <div class="input-group">
                                             <input type="text" name="data_relato" class="form-control mydatepicker" id="mydatepicker" placeholder="dd/mm/yyyy" required>
                                             <div class="input-group-append">
                                                 <span class="input-group-text"><i class="icon-calender"></i></span>
@@ -94,7 +94,7 @@
 </div>
 <script>
         $(function() {            
-            $("#mydatepicker").datepicker({ dateFormat: "yy-mm-dd" }).val()
+            //$("#mydatepicker").datepicker({ dateFormat: "yy-mm-dd" }).val()
         });
     var atualizaDados = function () {
         // $.ajax({

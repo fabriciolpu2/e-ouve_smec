@@ -63,6 +63,9 @@ class PublicController extends Controller
     // Salva Formulario de Denuncia
     public function manifestacaoNova() {
         $valores = Request::all();
+        
+        
+        //$valores['data_relato'] = implode('-', array_reverse(explode('/', $valores['data_relato'])));
         //dd($valores);
         $valores['status_id'] = '1';
         $token = str_random(12);
@@ -72,6 +75,7 @@ class PublicController extends Controller
         }
         
         $chamado = Chamado::create($valores);
+
         //dd($chamado);
         $numeroProtocolo = 
             $chamado['created_at'] = date("Y")

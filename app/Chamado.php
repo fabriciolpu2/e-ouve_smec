@@ -18,6 +18,8 @@ class Chamado extends Model
         'status_id',
         'assunto_id'
     ];
+    protected $date = ['created_at', 'updated_at', 'data_relato'];
+    //protected $dateFormat = 'U';
     public $with = ['midias', 'movimentacao', 'instituicao', 'tipo', 'assunto','status'];
 
     public function midias(){
