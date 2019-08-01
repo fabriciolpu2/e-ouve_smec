@@ -1,8 +1,13 @@
 @extends('layouts.impressao_layout')
 
 @section('content')
-<table>
-    <div class="card-header"><h4 class="m-b-0 text-white">{{$chamado->tipo->descricao}}</h4></div>
+<div class="row">
+        <div class="col-lg-12" style="text-align: center;">REGISTRO DE ATENDIMENTO - OUVIDORIA</div>
+        <div style="font-size: 12px;">
+            1.TIPO DE OCORRÊNCIA: {{$chamado->tipo->descricao}}
+        </div>
+</div>
+    <div class="card-header"><h4 class="m-b-0 text-white"></h4></div>
 
         
                     
