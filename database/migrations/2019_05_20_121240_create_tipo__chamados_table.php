@@ -13,7 +13,7 @@ class CreateTipoChamadosTable extends Migration
      */
     public function up()
     {
-        //DB::unprepared('CREATE SCHEMA ouvidoria');
+        DB::unprepared('CREATE SCHEMA ouvidoria');
         Schema::create('ouvidoria.tipos_chamado', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
@@ -30,5 +30,6 @@ class CreateTipoChamadosTable extends Migration
     public function down()
     {
         Schema::dropIfExists('ouvidoria.tipos_chamado');
+        DB::unprepared('DROP SCHEMA  IF EXISTS ouvidoria');
     }
 }
