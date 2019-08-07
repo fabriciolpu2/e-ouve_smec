@@ -112,6 +112,7 @@ class AdminController extends Controller
     }
     public function manifestacaoSave() {
         $valores = Request::all();
+        $valores['data_relato'] = implode('-', array_reverse(explode('/', $valores['data_relato'])));
         //dd($valores);
         $token = str_random(12);
         $valores['token'] = $token;
@@ -133,7 +134,7 @@ class AdminController extends Controller
         return response()->json(array('chamado' => $chamado));
     }
     public function manifestacaoNova() {
-        $valores = Request::all();
+        $valores = Request::all();        
         //dd($valores);
         $valores['status_id'] = '1';
         $token = str_random(12);

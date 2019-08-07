@@ -16,7 +16,7 @@ class CreateMovimentacaoChamadosTable extends Migration
         Schema::create('ouvidoria.movimentacao_chamados', function (Blueprint $table) {
             $table->bigIncrements('id');            
             $table->string('user');
-            $table->string('atividade');
+            $table->text('atividade');
             $table->unsignedInteger('chamado_id');
             $table->timestamps();
             $table->unsignedInteger('status_id')->nullable();

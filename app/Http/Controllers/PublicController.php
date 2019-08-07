@@ -71,7 +71,7 @@ class PublicController extends Controller
         $valores = Request::all();
         
         
-        //$valores['data_relato'] = implode('-', array_reverse(explode('/', $valores['data_relato'])));
+        $valores['data_relato'] = implode('-', array_reverse(explode('/', $valores['data_relato'])));
         //dd($valores);
         $valores['status_id'] = '1';
         $token = str_random(12);
