@@ -21,7 +21,7 @@ class Chamado extends Model
     ];
     protected $date = ['created_at', 'updated_at', 'data_relato'];
     //protected $dateFormat = 'U';
-    public $with = ['midias', 'movimentacao', 'instituicao', 'tipo', 'assunto','status'];
+    public $with = ['midias', 'movimentacao', 'instituicao', 'tipo', 'assunto','status', 'user'];
 
     public function midias(){
         return $this->hasMany(MidiaChamado::class);
@@ -40,6 +40,9 @@ class Chamado extends Model
     }
     public function tipo() {
         return $this->belongsTo(TipoChamado::class);
+    }
+    public function user() {
+        return $this->belongsTo(User::class);
     }
 
 }
