@@ -71,7 +71,7 @@
                             <div class="form-actions" style="margin-left: 30px">
                                 <button type="submit" class="btn_pesquisar btn btn-success"> <i class="fa fa-check"></i> Editar</button>
                                 <button type="button" class="btn btn-inverse">Voltar</button>
-                                <a class="btn btn-info" href="{{$chamado->id}}/imprimir" role="button"><i class="fa fa-print"></i> Imprimir</a>
+                                <a class="btn btn-info" href="{{$chamado->token}}/imprimir" role="button"><i class="fa fa-print"></i> Imprimir</a>
                             </div>
                             <br>
                         </div>

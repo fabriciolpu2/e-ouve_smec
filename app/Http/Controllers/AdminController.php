@@ -167,7 +167,8 @@ class AdminController extends Controller
         return view('formulario_editar_manifestacao', compact('chamado', 'status'));
     }
     public function imprimirManifestacao($id) {
-        $chamado = Chamado::find($id);
+        $chamado = Chamado::where('token','=',$id)->first();
+        //dd($chamado);
         $status = Status::all();
         //dd($chamado);
         return view('admin.impressao_relato', compact('chamado', 'status'));
