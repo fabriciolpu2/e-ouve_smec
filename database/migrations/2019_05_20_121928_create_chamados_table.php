@@ -20,6 +20,7 @@ class CreateChamadosTable extends Migration
             $table->string('nome_autor')->default("Anonimo");
             $table->string('token', 20)->unique();
             $table->date('data_relato')->nullable();
+            
             $table->unsignedInteger('tipo_id')->nullable();
             $table->unsignedInteger('instituicao_id')->nullable();
             $table->unsignedInteger('assunto_id');
@@ -44,7 +45,8 @@ class CreateChamadosTable extends Migration
                 ->on('ouvidoria.status')
                 ->onDelete('cascade');
 
-
+                $table->unsignedInteger('user_id')->nullable();
+                $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
 
 

@@ -9,10 +9,10 @@ class AddColumnUserinchamado extends Migration
 
     public function up()
     {
-        Schema::table('ouvidoria.chamados', function (Blueprint $table) {
-            $table->unsignedInteger('user_id')->nullable();
-            $table->foreign('user_id')->references('id')->on('users');
-        });
+        // Schema::table('ouvidoria.chamados', function (Blueprint $table) {
+        //     $table->unsignedInteger('user_id')->nullable();
+        //     $table->foreign('user_id')->references('id')->on('users');
+        // });
     }
 
     /**

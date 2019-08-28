@@ -39,6 +39,10 @@ Route::get('manifestacao/visualizar/{id}/imprimir', 'AdminController@imprimirMan
 
 Route::get('/seguranca', 'HomeController@index');
 
+//Relatorios
+Route::get('/admin/relatorios/instituicoes/', 'RelatorioController@listaTipoInstituicoes')->name('lista-tipo-institucoes');
+Route::get('/admin/relatorios/instituicoes/{id}', 'RelatorioController@relatorioListaInstituicoes')->name('lista-instituicoes');
+
 
 //Auth::routes();
 
