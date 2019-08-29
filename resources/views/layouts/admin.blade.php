@@ -123,6 +123,7 @@
                                 <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-chart-pie"></i><span class="hide-menu">Relatórios</span></a>
                                 <ul aria-expanded="false" class="collapse">
                                     <li><a href="/admin/relatorios/instituicoes/">Escolas Municipais</a></li>
+                                    <li><a href="{{route('relatorio-graficos')}}">Grafico de Chamados</a></li>
                                     
                                 </ul>
                             </li>
@@ -178,5 +179,6 @@
             });
             
         </script>
+         @yield('scripts')
     </body>
 </html>

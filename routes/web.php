@@ -35,13 +35,16 @@ Route::get('/manifestacoes/usuario/{id}', 'AdminController@listaChamadosUsuario'
 Route::get('/admin/usuarios/cadastrar', 'Auth\RegisterController@showRegistrationForm')->name('register');
 Route::POST('/admin/usuarios/cadastrar', 'Auth\RegisterController@addUser')->name('addUser');
 Route::get('admin/usuarios/', 'AdminController@listaUsuarios')->name('listaUsuarios');
-Route::get('manifestacao/visualizar/{id}/imprimir', 'AdminController@imprimirManifestacao')->name('imprimirManifestacao');
+Route::get('manifestacao/visualizar/{id}/imprimir', 'AdminController@imprimirManifestacao')->name('imprimir-relato');
 
 Route::get('/seguranca', 'HomeController@index');
 
 //Relatorios
-Route::get('/admin/relatorios/instituicoes/', 'RelatorioController@listaTipoInstituicoes')->name('lista-tipo-institucoes');
-Route::get('/admin/relatorios/instituicoes/{id}', 'RelatorioController@relatorioListaInstituicoes')->name('lista-instituicoes');
+Route::get('/admin/relatorios/instituicoes/', 'ChamadoController@listaTipoInstituicoes')->name('lista-tipo-institucoes');
+Route::get('/admin/relatorios/instituicoes/{id}', 'ChamadoController@relatorioListaInstituicoes')->name('lista-instituicoes');
+Route::get('/admin/instituicao/{id}/chamados', 'ChamadoController@listaChamadosInstituicao')->name('lista-chamados-instituicao');
+
+Route::get('/admin/relatorio/graficos', 'RelatorioController@exibirGrafico')->name('relatorio-graficos');
 
 
 //Auth::routes();

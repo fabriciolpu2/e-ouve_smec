@@ -23,7 +23,7 @@
                                     <td>{{$i->nome}}</td>
                                     <td>{{$i->qtd_chamados}}</td>
                                     <td>
-                                        <a class="btn btn-primary" href="/manifestacoes/usuario/{{$i->id}}" role="button"><i class="fa fa-search"></i> Visualizar</a>
+                                        <a class="btn btn-primary" href="{{ route('lista-chamados-instituicao', $i->id) }}" role="button"><i class="fa fa-search"></i> Visualizar</a>
                                     </td>
                                 </tr>
                             @endforeach

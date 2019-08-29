@@ -18,9 +18,10 @@ class CreateViewListaInstituicoes extends Migration
         CREATE OR REPLACE VIEW 
             ouvidoria.chamados_instituicoes_view AS
 	    SELECT
-	        instituicao.nome,
+            instituicao.nome,
+            instituicao.id,
 	        count(instituicao) as qtd_chamados,
-	        instituicao.tipo_id
+            instituicao.tipo_id
         FROM ouvidoria.instituicoes instituicao
             JOIN ouvidoria.chamados as c ON instituicao.id = c.instituicao_id
  	    GROUP BY (instituicao.id)

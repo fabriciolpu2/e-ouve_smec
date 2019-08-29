@@ -33,7 +33,8 @@
                                     <td><span class="label label-{{$c->status->style}}">{{$c->status->descricao}}</span> </td>
                                     <td>{{ date("d/m/Y - H:m", strtotime($c->created_at))}}</td>
                                     <td>
-                                        <a class="btn btn-primary" href="/manifestacao/visualizar/{{$c->id}}" role="button"><i class="fa fa-search"></i> Visualizar</a>                                        
+                                        <a class="btn btn-primary" href="/manifestacao/visualizar/{{$c->id}}" role="button"><i class="fa fa-search"></i> Visualizar</a>
+                                        <a class="btn btn-info" href="{{route('imprimir-relato', $c->token)}}" role="button"><i class="fa fa-print"></i> </a>
                                     </td>
                                 </tr>
                             @endforeach

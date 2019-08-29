@@ -21,16 +21,24 @@ class RelatorioController extends Controller
         $this->middleware('auth');
     }
 
-    public function listaTipoInstituicoes(){
-        $tipoInstituicoes = TipoInstituicao::all();
-        //dd($tipoInstituicoes);
-        return view ('admin.relatorios.tipo_instituicoes', compact('tipoInstituicoes'));
-    }
-    public function relatorioListaInstituicoes($id){
-        $instituicoes = ViewInstituicoes::where('tipo_id', $id)->get();
+    public function exibirGrafico() {
+        //dd("teste");
 
-        //chamados_instituicoes_view
-        ($instituicoes);
-        return view('admin.instituicoes.instituicoes', compact('instituicoes'));
+        $chamados = DB::select('select
+        tipo."style",
+        tipo.descricao,
+            count(chamado.tipo_id)	
+        FROM ouvidoria.tipos_chamado as tipo
+        join ouvidoria.chamados as chamado on tipo.id = chamado.tipo_id 
+        GROUP BY (tipo."style", tipo.descricao);');
+        //dd($chamados);
+
+        return view('admin.relatorios.grafico_chamados', compact('chamados'));
+    }
+
+    public function getChamadosGraficos() {
+        $chamado = DB::unprepared('')->get();
+        dd($chamado);
+        return response()->json(array('chamado' => $chamado));
     }
 }
