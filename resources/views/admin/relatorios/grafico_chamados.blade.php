@@ -2,21 +2,23 @@
 
 @section('content')
 <div class="row">
-    <div class="col-12">
+    <div class="col-lg-6">
         <div class="card">
             <div class="card-body">
-                <h6 class="card-subtitle"></h6>
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title">Pie Chart</h4>
-                        <div class="flot-chart">
-                            <div class="flot-chart-content" id="flot-pie-chart"></div>
-                        </div>
-                    </div>
+                <h4 class="card-title">Pie Chart</h4>
+                <div class="flot-chart">
+                    <div class="flot-chart-content" id="flot-pie-chart"></div>
                 </div>
             </div>
         </div>
-        <!-- Column -->
+    </div>
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Bar Chart</h4>
+                <div id="morris-bar-chart"></div>
+            </div>
+        </div>
     </div>
 </div>
 <!-- Row -->
@@ -31,64 +33,78 @@
     <script src="/theme/assets/plugins/flot/jquery.flot.stack.js"></script>
     <script src="/theme/assets/plugins/flot/jquery.flot.crosshair.js"></script>
     <script src="/theme/assets/plugins/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
+
+    <!--Morris JavaScript -->
+    <script src="/theme/assets/plugins/raphael/raphael-min.js"></script>
+    <script src="/theme/assets/plugins/morrisjs/morris.js"></script>
     
 
 
     <script>
-        //Flot Pie Chart
-        console.log('<?php 
-            foreach ($chamados as $c){
-                echo($c->descricao);
-            }
-        ?>')
-
-        //var chamado = $chamados;
-        function getRandomColor() {
-            var letters = '0123456789ABCDEF';
-            var color = '#';
-            for (var i = 0; i < 6; i++) {
-                color += letters[Math.floor(Math.random() * 16)];
-            }
-            return color;
-            }
+        function pie() {
+            var pieChamamados;
+            $.ajax({
+                type: 'get',
+                url: '/admin/relatorio/graficos/dados',
+                dataType: "json",
+                success: function(data) {
+                    pieChamamados = data.chamado;
+                    var plotObj = $.plot($("#flot-pie-chart"), pieChamamados, {
+                        series: {
+                            pie: {
+                                innerRadius: 0.5
+                                , show: true
+                            }
+                        }
+                        , grid: {
+                            hoverable: true
+                        }
+                        , color: null
+                        , tooltip: true
+                        , tooltipOpts: {
+                            content: "%p.0%, %s", // show percentages, rounding to 2 decimal places
+                            shifts: {
+                                x: 20
+                                , y: 0
+                            }
+                            , defaultTheme: false
+                        }
+                    });
+                    return pieChamamados;
+                }
+            });
+        };
             
         $(function () {
-            var color = getRandomColor();
-            console.log(color);
-            var data = [
-            <?php 
-                foreach($chamados as $c) {
-                    echo('{');
-                    echo('label:"'.$c->descricao.'",');
-                    echo('data:"'.$c->count.'",');
-                    echo('color: '); ?> getRandomColor()<?php ('",');
-                    echo('},');
-                }
-            ?>            
-            ];
-            var plotObj = $.plot($("#flot-pie-chart"), data, {
-                series: {
-                    pie: {
-                        innerRadius: 0.5
-                        , show: true
-                    }
-                }
-                , grid: {
-                    hoverable: true
-                }
-                , color: null
-                , tooltip: true
-                , tooltipOpts: {
-                    content: "%p.0%, %s", // show percentages, rounding to 2 decimal places
-                    shifts: {
-                        x: 20
-                        , y: 0
-                    }
-                    , defaultTheme: false
+            pie();
+        });
+    </script>
+
+    <script>
+        $(function () {
+            var escolasMunicipais;
+            $.ajax({
+                type: 'get',
+                url: '/admin/relatorio/graficos/dados',
+                dataType: "json",
+                success: function(data) {
+                    // escolasMunicipais = data.escolasMunicipais;
+                    // console.log(escolasMunicipais)
+                    // Morris.Bar({
+                    // element: 'morris-bar-chart',
+                    // data: [escolasMunicipais],
+                    // xkey: 'titulo',
+                    // ykeys: ['0','1'],
+                    // labels: [escolasMunicipais],
+                    // barColors:['#55ce63', '#2f3d4a', '#009efb'],
+                    // hideHover: 'auto',
+                    // gridLineColor: '#eef0f2',
+                    // resize: true
+                });
                 }
             });
         });
-        </script>
+    </script>
 
 @endsection
 

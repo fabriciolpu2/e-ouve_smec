@@ -45,6 +45,9 @@ Route::get('/admin/relatorios/instituicoes/{id}', 'ChamadoController@relatorioLi
 Route::get('/admin/instituicao/{id}/chamados', 'ChamadoController@listaChamadosInstituicao')->name('lista-chamados-instituicao');
 
 Route::get('/admin/relatorio/graficos', 'RelatorioController@exibirGrafico')->name('relatorio-graficos');
+Route::get('/admin/relatorio/graficos/dados', 'RelatorioController@getChamadosGraficos')->name('relatorio-graficos-dados');
+
+
 
 
 //Auth::routes();
