@@ -22,10 +22,10 @@
             </div>
 </div> --}}
 <div class="row">
-    {{-- <div class="col-12 m-t-10">
-        <h4 class="m-b-0">Texto descrição do sistema ouvidoria da SMEC - 3000-0000</h4>
+    <div class="col-12 m-t-12">
+        <h3 class="m-b-0">E-mail: smecouve@edu.pmbv.rr.gov.br</h3>
         <p class="text-muted m-t-0 font-12"></p>
-    </div> --}}
+    </div>
     <div class="col-md-3">
         <div class="card card-inverse card-danger" style="text-align: center">
             <a href="/manifestacao/denuncia">

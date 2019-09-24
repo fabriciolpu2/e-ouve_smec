@@ -71,9 +71,13 @@ class AdminController extends Controller
 
     public function buscaProtocolo(){
         $protocolo = Request::all();        
-        $chamado = Chamado::where('token', $protocolo['protocolo'])->first();        
+        $chamado = Chamado::where('token', $protocolo['protocolo'])->first();
         $status = Status::all();
-        return view('busca_manifestacao', compact('chamado', 'status'));
+        
+        if($chamado == null){
+            return redirect('/home');
+        }
+        return view('formulario_editar_manifestacao', compact('chamado', 'status'));
     }
     
     
@@ -123,13 +127,15 @@ class AdminController extends Controller
             $valores['nome_autor'] = 'Anônimo';
         }
         $chamado = Chamado::create($valores);
+        $st = str_random(3);
         $numeroProtocolo = 
             $chamado['created_at'] = date("Y")
             .$chamado['created_at'] = date("m")
             .$chamado['tipo_id']
             .$chamado['id'];
-        DB::table('ouvidoria.chamados')->where('id', $chamado['id'])->update(array('token'=> $numeroProtocolo));
-        $chamado['token'] = $numeroProtocolo;
+        //dd($chamado);
+        DB::table('ouvidoria.chamados')->where('id', $chamado['id'])->update(array('token'=> $numeroProtocolo.'-'.$st));
+        $chamado['token'] = $numeroProtocolo.'-'.$st;
         //dd($chamado->tipo);
         return response()->json(array('chamado' => $chamado));
     }
@@ -143,12 +149,14 @@ class AdminController extends Controller
             $valores['nome_autor'] = 'Anônimo';
         }
         $chamado = Chamado::create($valores);
+        $st = str_random(3);
         $numeroProtocolo = 
             $chamado['created_at'] = date("Y")
             .$chamado['created_at'] = date("m")
             .$chamado['tipo_id']
             .$chamado['id'];
-        DB::table('ouvidoria.chamados')->where('id', $chamado['id'])->update(array('token'=> $numeroProtocolo));
+
+        DB::table('ouvidoria.chamados')->where('id', $chamado['id'])->update(array('token'=> $numeroProtocolo.'-'.$st));
         
         return view('confirmacao_manifestacao', compact('chamado'));
 
@@ -188,7 +196,7 @@ class AdminController extends Controller
         $mov['user'] = Auth::user()->name;
         //dd($mov);
         $movimentacao = MovimentacaoChamado::create($mov);
-        return redirect('/home');
+        return redirect('/manifestacao/visualizar/'.$chamado->id);
     }
 
     public function listaUsuarios(){

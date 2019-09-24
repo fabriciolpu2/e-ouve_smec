@@ -8,7 +8,7 @@
                 <div class="card-header"><h4 class="m-b-0 text-white">{{$chamado->tipo->descricao}}</h4></div>
                 <div class="card-body">
                     <div class="row p-t-20">
-                        <div class="col-md-4"><h4>Nome: <b>{{$chamado->nome_autor}}</b></h4></div>
+                        <div class="col-md-4"><h4>Nome: <b>************ ***********</b></h4></div>
                         <div class="col-md-3"><h4>Nº Protocolo: <b>{{$chamado->token}}</b></h4></div>
                         <div class="col-md-4"><h4>Tipo de Manifestação:<b> {{$chamado->tipo->descricao}}</b></h4></div>
                         <div class="col-md-4"><h4>Assunto: <b>{{$chamado->assunto->descricao}}</b></h4></div>

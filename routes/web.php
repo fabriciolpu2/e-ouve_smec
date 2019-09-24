@@ -46,7 +46,7 @@ Route::get('/admin/instituicao/{id}/chamados', 'ChamadoController@listaChamadosI
 
 Route::get('/admin/relatorio/graficos', 'RelatorioController@exibirGrafico')->name('relatorio-graficos');
 Route::get('/admin/relatorio/graficos/dados', 'RelatorioController@getChamadosGraficos')->name('relatorio-graficos-dados');
-
+Route::post('/admin/busca-protocolo', 'AdminController@buscaProtocolo')->name('busca-protocolo');
 
 
 

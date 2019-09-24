@@ -81,14 +81,17 @@ class PublicController extends Controller
         }
         
         $chamado = Chamado::create($valores);
-
+        $st = str_random(3);
+        //dd($st);
         //dd($chamado);
         $numeroProtocolo = 
             $chamado['created_at'] = date("Y")
             .$chamado['created_at'] = date("m")
             .$chamado['tipo_id']
             .$chamado['id'];
-        $chamado['token'] = $numeroProtocolo;
+
+        $chamado['token'] = $numeroProtocolo.'-'.$st;
+        //dd($chamado['token']);
         DB::table('ouvidoria.chamados')->where('id', $chamado['id'])->update(array('token'=> $numeroProtocolo));
         //$chamado->update(['token'=> $numeroProtocolo]);
         //dd($chamado);

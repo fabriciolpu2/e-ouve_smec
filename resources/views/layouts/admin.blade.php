@@ -49,8 +49,11 @@
                             <li class="nav-item"> <a class="nav-link sidebartoggler hidden-sm-down text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
                             <li class="nav-item hidden-sm-down search-box">
                                 <a class="nav-link hidden-sm-down text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-search"></i></a>
-                                <form class="app-search">
-                                    <input type="text" class="form-control" placeholder="Nº de Protocolo"> <a class="srh-btn"><i class="ti-close"></i></a> </form>
+                                <form class="app-search" action="admin/busca-protocolo/" method="POST" enctype="multipart/form-data">
+                                    <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
+                                    <input type="text" name="protocolo" class="form-control" placeholder="Nº de Protocolo" required> <a class="srh-btn"><i class="ti-close"></i></a>
+                                    <button type="submit" class="btn btn-success col-12"> <i class="fa fa-search"></i> Acompanhar</button>
+                                </form>
                             </li>
                             
                         </ul>
