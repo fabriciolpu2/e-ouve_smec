@@ -68,18 +68,14 @@ class RelatorioController extends Controller
             $chamadoPie = [];
             $chamadoPie = ['label'=> $c->descricao, 'data' => $c->count, 'color' => $this->getRandomColor()];
             array_push($pie, $chamadoPie);
-
-            
-            
         }
         $instituicoes = ViewInstituicoes::where('tipo_id', 1)->get();
         
-        $escolasMunicipais = ['titulo'=> 'Escolas Municipais'];
+        $escolasMunicipais = array('titulo'=> 'Escolas Municipais');
         foreach ($instituicoes as $i) {
-            array_push($escolasMunicipais, $i->nome = $i->qtd_chamados );
+            array_push($escolasMunicipais, [$i->nome = $i->qtd_chamados, 'Denuncia'=>'2', 'Reclamacao'=>'4']);
         }
-
-        //dd($escolasMunicipais);
+        dd($escolasMunicipais);
 
         return response()->json(array('chamado' => $pie, 'escolasMunicipais' => $escolasMunicipais));
     }

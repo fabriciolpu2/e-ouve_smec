@@ -15,16 +15,16 @@
                         <div class="col-md-3"><h4><b>Data:</b> {{date("d/m/Y - H:m", strtotime($chamado->created_at))}}</h4></div>
                         <div class="col-md-3"><h4><b>Insitituição: </b>{{$chamado->instituicao->nome}}</h4></div>
                         <div class="col-md-12"><h4><b>Titulo:</b> {{$chamado->titulo}}</h4></div>
-                        <div class="col-md-12"><h4><b>Relato:</b> {{$chamado->relato}}</h4></div>
+                        <div class="col-md-12"><h4><b>Relato:</b> {!! html_entity_decode($chamado->relato)!!}</h4></div>
                     </div>
                     <div class="card-outline-{{$chamado->status->style}}">
                         <div class="card-header"><h4 class="m-b-0 text-white">Movimentações</h4></div>
                         @foreach ($chamado->movimentacao as $mov)
                             <div class="row p-t-20">
-                                <div class="col-md-3"><h6>Data: <b>{{ date("d/m/Y - H:m", strtotime($mov->created_at))}}</b></h6></div>
-                                <div class="col-md-2"><h6>Status: <b>{{$mov->status->descricao}}</b></h6></div>
-                                <div class="col-md-3"><h6>Atividade: <b>{{$mov->atividade}}</b></h6></div>
-                                <div class="col-md-3"><h6>Usuario: <b>{{$mov->user}}</b></h6></div>
+                                <div class="col-md-3"><h6><b> Data:</b> {{ date("d/m/Y - H:m", strtotime($mov->created_at))}}</h6></div>
+                                <div class="col-md-2"><h6><b> Status:</b>{{$mov->status->descricao}}</h6></div>
+                                <div class="col-md-3"><h6><b> Atividade:</b> {!! html_entity_decode($mov->atividade) !!}</h6></div>
+                                <div class="col-md-3"><h6><b> Usuario:</b> {{$mov->user}}</h6></div>
                             </div>
                         @endforeach
                     </div>

@@ -21,7 +21,7 @@
         <div class="col-md-12"><h4>Assunto: <b>{{$chamado->assunto->descricao}}</b></h5></div>
         <div class="col-md-12"><h4>Titulo: <b>{{$chamado->titulo}}</b></h4></div>
         </br></br>
-        <div class="col-md-12"><h4 style="text-align: justify; font-size: 16px"><b>Relato: </b>{{$chamado->relato}}</h4></div>
+        <div class="col-md-12"><h4 style="text-align: justify; font-size: 16px"><b>Relato: </b>{!! html_entity_decode($chamado->relato) !!}</h4></div>
     </div>
 </br>
 </br>
@@ -42,7 +42,7 @@
                         <td><div class=""><h6><b>Usuario: </b>{{$mov->user}}</h6></div></td>
                     </tr>
                     <tr>
-                        <td colspan="3"><div class=""><h6><b>Atividade: </b> {{$mov->atividade}}</h6></div></td>
+                        <td colspan="3"><div class=""><h6><b>Atividade: </b> {!! html_entity_decode($mov->atividade) !!}</h6></div></td>
                     </tr>
                 </table>
             </br>
