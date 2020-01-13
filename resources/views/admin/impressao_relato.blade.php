@@ -3,7 +3,9 @@
 @section('content')
 <div class="">
 </br>
+<div style="text-align: center"><img src="/img/logo_smec_ouve_w.png" height="150px" alt="logo" class="light-logo" /></div>
     <div class="row p-t-20">
+        
         <div class="col-lg-12" style="text-align: center;font-size: 20px"><b>REGISTRO DE ATENDIMENTO - OUVIDORIA</b></div>
     </br>
 </br>

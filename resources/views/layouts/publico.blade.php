@@ -35,7 +35,7 @@
                 <div class="navbar-header">
                     <a class="navbar-brand" href="#">
                         <b>
-                                <a href="/" class="m-b-0 text-white"><i class="fa fa-headphones fa-2x"></i> Ouvidoria SMEC</a>
+                                <a href="/" class="m-b-0 text-white"><img src="../img/logo_smec_ouve.png" height="50px" alt="homepage" class="light-logo" /> Ouvidoria SMEC</a>
                             
                             {{-- <img src="../material/assets/images/logo-light-icon.png" alt="homepage" class="light-logo" /> --}}
                         </b>
