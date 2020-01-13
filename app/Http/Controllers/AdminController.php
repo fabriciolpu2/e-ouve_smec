@@ -21,7 +21,10 @@ class AdminController extends Controller
     }
     public function listaChamados()
     {
-        $chamados = Chamado::paginate(100);
+        //$chamados = Chamado::paginate(100);
+        $chamados = Chamado::orderBy('status_id', 'asc')->orderBy('created_at', 'desc')->paginate(100);
+        //$chamados = DB::table('ouvidoria.chamados')->orderBy('created_at', 'asc')->paginate(50);
+        //dd($chamados);
         $tiposInstituicao = TipoInstituicao::all();
         $instituicoes = Instituicao::where('tipo_id', 1)->get();
         $tipoChamado = TipoChamado::all();
