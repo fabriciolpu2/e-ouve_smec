@@ -6,7 +6,9 @@
 <div style="text-align: center"><img src="/img/logo_smec_ouve_w.png" height="150px" alt="logo" class="light-logo" /></div>
     <div class="row p-t-20">
         
-        <div class="col-lg-12" style="text-align: center;font-size: 20px"><b>REGISTRO DE ATENDIMENTO - OUVIDORIA</b></div>
+        <div class="col-lg-12" style="text-align: center;font-size: 20px"><b>REGISTRO DE ATENDIMENTO - OUVIDORIA</b><p>http://smecouve.pmbv.rr.gov.br</div>
+        <div style="text-align: center"></div>
+        
     </br>
 </br>
         <div class="col-md-12"><h3>Nº Protocolo: <b>{{$chamado->token}}</b></h3></div>
@@ -76,7 +78,6 @@
     </div>
 
     <div style="text-align: center">
-        
         
     </div>
 </div>
